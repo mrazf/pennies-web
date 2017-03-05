@@ -1,0 +1,31 @@
+import React from 'react'
+import { render } from 'react-dom'
+import { Router, Route, IndexRoute, browserHistory } from 'react-router'
+import firebase from 'firebase'
+
+import App from './app'
+import Home from './home'
+import Dashboard from './dashboard'
+import DashboardContent from './dashboard/content'
+import onEnter from './dashboard/on-enter'
+
+const config = {
+  apiKey: 'AIzaSyCUc586MZvUba-no3aB-tt2mr7CLROVle8',
+  authDomain: 'pennies-9cba3.firebaseapp.com',
+  databaseURL: 'https://pennies-9cba3.firebaseio.com',
+  storageBucket: 'pennies-9cba3.appspot.com',
+  messagingSenderId: '270478801405'
+}
+
+firebase.initializeApp(config)
+
+render((
+  <Router history={browserHistory}>
+    <Route path='/' component={App}>
+      <IndexRoute component={Home} />
+      <Route path='/dashboard' component={Dashboard} onEnter={onEnter}>
+        <Route path='/dashboard/:month/:categoryType' component={DashboardContent} />
+      </Route>
+    </Route>
+  </Router>
+), document.getElementById('app'))
