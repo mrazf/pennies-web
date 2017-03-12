@@ -16,11 +16,9 @@ export default class MonthPicker extends Component {
         <ul className='nav nav-tabs justify-content-center'>
           {
             monthsShort.map((m, i) => {
-              const monthName = moment.months()[i].toLowerCase()
-
               return (
                 <li className='nav-item' key={i}>
-                  <Link to={`/dashboard/${monthName}/transactions`} className={classNames({ 'nav-link': true, 'active': i === activeMonthIndex })}>
+                  <Link to={`/dashboard/transactions/months/${i + 1}`} className={classNames({ 'nav-link': true, 'active': i === activeMonthIndex })}>
                     {m}
                   </Link>
                 </li>

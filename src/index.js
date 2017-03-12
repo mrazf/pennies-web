@@ -25,7 +25,7 @@ render((
     <Route path='/' component={App}>
       <IndexRoute component={Home} />
       <Route path='/dashboard' component={Dashboard} onEnter={onEnter}>
-        <Route path='/dashboard/:month/:categoryType' component={DashboardContent} />
+        <Route path='/dashboard/transactions/months/:month' component={DashboardContent} />
       </Route>
     </Route>
   </Router>

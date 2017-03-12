@@ -12,10 +12,9 @@ export default class Transactions extends Component {
   }
 
   getTransactions (token) {
-    console.log(this.props.month)
     const headers = { 'Authorization': `Bearer: ${token}` }
     const from = moment.utc().month(this.props.month).subtract(1, 'month').endOf('month').format()
-    const to = moment.utc().month(this.props.month).add(1, 'month').endOf('month').format()
+    const to = moment.utc().month(this.props.month).endOf('month').format()
 
     window.fetch(`http://localhost:9001/transactions?from=${from}&to=${to}`, { headers })
       .then(resp => resp.json())
@@ -39,13 +38,15 @@ export default class Transactions extends Component {
 
   render () {
     return (
-      <table className='table'>
+      <table className='table table-sm'>
         <thead>
           <tr>
             <th>Date & Time</th>
-            <th>First Name</th>
-            <th>Last Name</th>
-            <th>Username</th>
+            <th>Category</th>
+            <th>Amount</th>
+            <th>Merchant</th>
+            <th>Description</th>
+            <th>Monzo Category</th>
           </tr>
         </thead>
         <tbody>
@@ -53,8 +54,12 @@ export default class Transactions extends Component {
             this.state.transactions.map(t => {
               return (
                 <tr key={t.id}>
-                  <td>{moment(t.created).format('MMM Do YYYY, ddd, HH:mm:ss')}</td>
+                  <td>{moment(t.created).format('ddd Do, HH:mm:ss')}</td>
+                  <td>Uncategorized</td>
+                  <td>{t.amount}</td>
+                  <td>-</td>
                   <td>{t.description}</td>
+                  <td>{t.category}</td>
                 </tr>
               )
             })
