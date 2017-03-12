@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 
-import HomeHero from './home-hero'
 import Explain from './explain'
 
 import './index.scss'

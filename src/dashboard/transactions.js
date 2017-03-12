@@ -23,8 +23,6 @@ export default class Transactions extends Component {
   }
 
   componentDidMount () {
-    const userId = firebase.auth().currentUser.uid
-
     firebase.auth().currentUser.getToken(true)
       .then(this.getTransactions)
   }
