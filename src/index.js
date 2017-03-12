@@ -18,6 +18,7 @@ const config = {
 }
 
 firebase.initializeApp(config)
+firebase.auth()
 
 render((
   <Router history={browserHistory}>

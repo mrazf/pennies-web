@@ -1,0 +1,18 @@
+@import "~bootstrap/scss/_variables.scss";
+@import "~bootstrap/scss/mixins/_breakpoints.scss";
+
+.my-card {
+  @include media-breakpoint-up(sm) {
+    height: 15em;
+    width: 13em;
+    box-shadow: 0 2px 3px rgba(10, 10, 10, 0.1), 0 0 0 1px rgba(10, 10, 10, 0.1);
+  }
+}
+
+.my-card-detail {
+  height: 70%
+}
+
+.my-card-title {
+  height: 30%
+}

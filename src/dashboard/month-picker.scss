@@ -1,0 +1,13 @@
+.month-picker {
+  margin-top: 3em;
+
+  .nav-tabs {
+    border-bottom: 1px solid #FFCDA3
+  }
+
+  .nav-link.active {
+    color: #464a4c;
+    background-color: #fff;
+    border-color: #FFCDA3 #FFCDA3 #fff;
+  }
+}

@@ -3,7 +3,7 @@ import firebase from 'firebase'
 
 import TopNav from './top-nav'
 
-import './bulma.css'
+import './app.scss'
 
 export default class App extends Component {
   constructor (props) {

@@ -1,3 +1,9 @@
+# Firebase
+.firebaserc
+
+# IDE
+.vscode
+
 # Build
 dist
 

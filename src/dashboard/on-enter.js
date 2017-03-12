@@ -1,10 +1,17 @@
+import firebase from 'firebase'
 import moment from 'moment'
+
+const move = (pathName, replaceState, monthName) => {
+  if (pathName === '/dashboard') replaceState(`/dashboard/${monthName}/transactions`)
+}
 
 export default (nextState, replaceState) => {
   const monthIndex = moment().get('month')
   const monthName = moment.months()[monthIndex].toLowerCase()
 
-  console.log(nextState)
+  if (firebase.auth().currentUser) return move(nextState.location.pathname, replaceState, monthName)
 
-  if (nextState.location.pathname === '/dashboard') replaceState(`/dashboard/${monthName}/categories`)
+  firebase.auth().onAuthStateChanged(() => {
+    move(nextState.location.pathname, replaceState, monthName)
+  })
 }

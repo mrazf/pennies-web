@@ -38,9 +38,9 @@ class LogoutAndUser extends Component {
 
   render () {
     return (
-      <div className='nav-right nav-menu'>
-        <a className='nav-item' onClick={this.logout}> Logout </a>
-        <Link to='/dashboard' className='nav-item'>{this.props.user.displayName}</Link>
+      <div className='navbar-nav ml-auto w-100 justify-content-end'>
+        <a className='nav-item nav-link' onClick={this.logout}> Logout </a>
+        <Link to='/dashboard' className='nav-item nav-link'>{this.props.user.displayName}</Link>
       </div>
     )
   }
