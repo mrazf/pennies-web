@@ -5,7 +5,8 @@
   "repository": {},
   "license": "MIT",
   "scripts": {
-    "lint": "standard src/**/*.js"
+    "lint": "standard src/**/*.js",
+    "build": "webpack"
   },
   "precommit": [
     "lint"

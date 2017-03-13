@@ -2,7 +2,9 @@ language: node_js
 node_js:
   - "6"
 script: npm run lint
+after_success: npm run build
 deploy:
+  skip_cleanup: true
   provider: firebase
   token:
     secure: qRURutgdOgMcj+s6snNzbG8z3B1TS9mOH5FOijhdzX6svXLHxBINKrKTzDXI3hRo4PPp9dCjH/5T11sN+BWa2HOb2mGTFIA+eW4epbRI1Wb+hvGt7LWUaZbTxMRyFNR1TFfR6SVsC1NwJs3o3/70+DH286rpRiwXmDuslXesl174m7DBBUSZJJIpV0RShTXm7kSaAOOD8zBl864oQIAJi24B9YyPy8g1iYVyyV2stz4jXtfkIeN/F4DKuD/YZ+KR82DCrFuEdMb7JJvar0pwKq0BPtVLhRKg8xOVjDURntGqZGXREUIbHlu7O9UXewiKmyh7p8qno56ijdWlOGLl8MSn0A1Bf4w3KDU3XSC5kaza8gSkdyMIP+/qJp6uH1aBb7CJI7MVmrfB0ELLpeL/KDrM0GFStRNcq0ZG82mK3VUHspkizqdbeVFoWRD5lFyVLMEmWVyJaApMx92jRwGmjYrJhK9fl/O7S9+hfOjhVFfuZ8G3Wl1+Vyt5Srl0JN6jTUrdYHwXYLvEWeq6K2oCSxA9+P1c2EHPwSPnD2cVf8ENxc3u0qBBq/3v0Ouh9UBd37pJtEWlHyAE7BujjEE6WBDiNbAhvE+jmnfYhmuLeRqnJZ2mRNdCUKYYet+ZOgybjyUaFPOHtm9xWpfRr5PnyDxJyruCRAaOlNEOIKJERPo=
