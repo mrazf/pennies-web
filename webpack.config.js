@@ -1,3 +1,4 @@
+const webpack = require('webpack')
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 
@@ -22,7 +23,10 @@ module.exports = {
     ]
   },
   plugins: [
-    new HtmlWebpackPlugin({ template: './src/index.ejs' })
+    new HtmlWebpackPlugin({ template: './src/index.ejs' }),
+    new webpack.DefinePlugin({
+      __API_HOST__: process.env.API_HOST || "'http://localhost:9000'"
+    })
   ],
   devServer: {
     publicPath: '/',

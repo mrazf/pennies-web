@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import firebase from 'firebase'
 import moment from 'moment'
 
+const apiHost = __API_HOST__
+
 export default class Transactions extends Component {
   constructor (props) {
     super(props)
@@ -16,7 +18,7 @@ export default class Transactions extends Component {
     const from = moment.utc().month(this.props.month).subtract(1, 'month').endOf('month').format()
     const to = moment.utc().month(this.props.month).endOf('month').format()
 
-    window.fetch(`http://localhost:9001/transactions?from=${from}&to=${to}`, { headers })
+    window.fetch(`${apiHost}/transactions?from=${from}&to=${to}`, { headers })
       .then(resp => resp.json())
       .then(json => this.setState({ transactions: json.transactions }))
       .catch(console.log)

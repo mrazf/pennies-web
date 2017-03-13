@@ -11,6 +11,9 @@
   "precommit": [
     "lint"
   ],
+  "standard": {
+    "globals": ["__API_HOST__"]
+  },
   "dependencies": {
     "bootstrap": "4.0.0-alpha.6",
     "bulma": "^0.3.2",
