@@ -7,9 +7,9 @@ const dashboardItems = [
     title: 'Categories',
     description: 'Group your transactions and we\'ll keep categorizing them to see where your monies going',
     links: [
-      { title: 'By Month', link: '/dashboard/home/categories' },
-      { title: 'By Day', link: '/dashboard/home/categories/by-day' },
-      { title: 'By Year', link: '/dashboard/home/categories/by-year' }
+      { title: 'By Month', link: '/dashboard/categories' },
+      { title: 'By Day', link: '/dashboard/categories/by-day' },
+      { title: 'By Year', link: '/dashboard/categories/by-year' }
     ]
   },
   {
