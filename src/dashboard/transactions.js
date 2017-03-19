@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router'
 import firebase from 'firebase'
 import moment from 'moment'
 
@@ -41,6 +42,7 @@ export default class Transactions extends Component {
       <table className='table table-sm'>
         <thead>
           <tr>
+            <th />
             <th>Date & Time</th>
             <th>Category</th>
             <th>Amount</th>
@@ -54,6 +56,11 @@ export default class Transactions extends Component {
             this.state.transactions.map(t => {
               return (
                 <tr key={t.id}>
+                  <td>
+                    <Link to={`/dashboard/transactions/months/${this.props.month + 1}/${t.id}`}>
+                      Detail
+                    </Link>
+                  </td>
                   <td>{moment(t.created).format('ddd Do, HH:mm:ss')}</td>
                   <td>Uncategorized</td>
                   <td>{t.amount}</td>

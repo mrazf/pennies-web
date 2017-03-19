@@ -1,14 +1,11 @@
 import React, { Component } from 'react'
-
-import MonthPicker from './month-picker'
+import Banner from './banner/banner'
 
 export default class Dashboard extends Component {
   render () {
-    const month = this.props.params.month - 1
-
     return (
-      <div className='container-fluid'>
-        <MonthPicker monthName={month} />
+      <div className='dashboard'>
+        <Banner />
         { this.props.children }
       </div>
     )

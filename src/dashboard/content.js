@@ -21,7 +21,6 @@ export default class Content extends Component {
   }
 
   render () {
-    const month = this.props.params.month - 1
     return (
       <div className='row content'>
         <div className='col-2'>
@@ -32,7 +31,7 @@ export default class Content extends Component {
           </ul>
         </div>
         <div className='col-9'>
-          { this.state.user ? <Transactions month={month} /> : <h1>tits</h1>}
+          { this.state.user ? <Transactions month={1} /> : <h1>tits</h1>}
         </div>
         <div className='col-1'>
           <button type='button' className='btn btn-outline-primary'>New</button>

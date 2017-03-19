@@ -6,8 +6,8 @@ import firebase from 'firebase'
 import App from './app'
 import Home from './home'
 import Dashboard from './dashboard'
+import DashboardHome from './dashboard/home'
 import DashboardContent from './dashboard/content'
-import onEnter from './dashboard/on-enter'
 
 const config = {
   apiKey: 'AIzaSyCUc586MZvUba-no3aB-tt2mr7CLROVle8',
@@ -24,7 +24,9 @@ render((
   <Router history={browserHistory}>
     <Route path='/' component={App}>
       <IndexRoute component={Home} />
-      <Route path='/dashboard' component={Dashboard} onEnter={onEnter}>
+      <Route component={Dashboard}>
+        <Route path='/dashboard/home' component={DashboardHome} />
+        <Route path='/dashboard/transactions' component={DashboardContent} />
         <Route path='/dashboard/transactions/months/:month' component={DashboardContent} />
       </Route>
     </Route>

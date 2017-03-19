@@ -25,7 +25,7 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({ template: './src/index.ejs' }),
     new webpack.DefinePlugin({
-      __API_HOST__: process.env.API_HOST || "'http://localhost:9000'"
+      __API_HOST__: process.env.API_HOST || "'http://localhost:9001'"
     })
   ],
   devServer: {
