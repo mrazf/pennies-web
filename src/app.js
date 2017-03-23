@@ -2,17 +2,27 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import firebase from 'firebase'
 
-import { user, noUser } from './redux/actions'
+import { addUser, noUser, fetchToken } from './redux/actions'
 import TopNav from './top-nav'
 
 import './app.scss'
 
 class App extends Component {
-  constructor (props) {
-    super(props)
+  componentDidMount () {
+    firebase.auth().onAuthStateChanged(userObj => {
+      const { user, loggedInUser, loggedOutUser } = this.props
 
-    const { loggedInUser, loggedOutUser } = props
-    firebase.auth().onAuthStateChanged(userObj => userObj ? loggedInUser(userObj) : loggedOutUser())
+      if (userObj !== user) {
+        return userObj ? loggedInUser(userObj) : loggedOutUser()
+      }
+    })
+  }
+
+  componentWillReceiveProps (nextProps) {
+    if (nextProps.user && !nextProps.token.requested) {
+      const { token, fetchTokenDiff } = this.props
+      fetchTokenDiff(nextProps.user)
+    }
   }
 
   render () {
@@ -25,13 +35,18 @@ class App extends Component {
   }
 }
 
+const mapStateToProps = state => {
+  return { user: state.user.data, token: state.token }
+}
+
 const mapDispatchToProps = dispatch => {
   return {
-    loggedInUser: userObj => dispatch(user(userObj)),
-    loggedOutUser: () => dispatch(noUser(null))
+    loggedInUser: userObj => dispatch(addUser(userObj)),
+    loggedOutUser: () => dispatch(noUser(null)),
+    fetchTokenDiff: func => dispatch(fetchToken(func))
   }
 }
 
-const AppContainer = connect(null, mapDispatchToProps)(App)
+const AppContainer = connect(mapStateToProps, mapDispatchToProps)(App)
 
 export default AppContainer
