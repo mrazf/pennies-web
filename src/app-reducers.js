@@ -1,4 +1,5 @@
 import { combineReducers } from 'redux'
+import categories from './categories/reducers'
 
 const user = (state = { data: null }, action) => {
   switch (action.type) {
@@ -18,6 +19,14 @@ const token = (state = { value: null, requested: false, received: false }, actio
   }
 }
 
-const pennies = combineReducers({ user, token })
+const transactions = (state = { entries: [], requested: false, received: false }, action) => {
+  switch (action.type) {
+    case 'REQUEST_TRANSACTIONS': return { ...state, requested: true }
+    case 'RECEIVE_TRANSACTIONS': return { ...state, received: true, entries: action.transactions }
+    default: return state
+  }
+}
+
+const pennies = combineReducers({ user, token, transactions, categories })
 
 export default pennies

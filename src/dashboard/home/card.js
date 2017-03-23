@@ -1,11 +1,10 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router'
 
-export default class DashboardCard extends Component {
+export default class Card extends Component {
   render () {
     return (
       <div className='card' style={{width: '20rem'}}>
-        <img className='card-img-top' src='...' alt='Card image cap' />
         <div className='card-block'>
           <h4 className='card-title'>{this.props.data.title}</h4>
           <p className='card-text'>{this.props.data.description}</p>

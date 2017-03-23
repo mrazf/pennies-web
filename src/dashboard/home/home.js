@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-import DashboardCard from './dashboard-card'
+import Card from './card'
 
 const dashboardItems = [
   {
@@ -32,7 +32,7 @@ const dashboardItems = [
   }
 ]
 
-export default class Dashboard extends Component {
+export default class Home extends Component {
   render () {
     return (
       <div className='dashboard-home'>
@@ -42,7 +42,7 @@ export default class Dashboard extends Component {
               dashboardItems.map(i => {
                 return (
                   <div className='col' key={i.title}>
-                    <DashboardCard data={i} />
+                    <Card data={i} />
                   </div>
                 )
               })

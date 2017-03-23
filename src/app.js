@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import firebase from 'firebase'
 
-import { addUser, noUser, fetchToken } from './redux/actions'
+import { addUser, noUser, fetchToken } from './app-actions'
 import TopNav from './top-nav'
 
 import './app.scss'

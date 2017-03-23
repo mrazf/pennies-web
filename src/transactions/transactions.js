@@ -1,42 +1,9 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
 import { Link } from 'react-router'
-import firebase from 'firebase'
 import moment from 'moment'
 
-const apiHost = __API_HOST__
-
-export default class Transactions extends Component {
-  constructor (props) {
-    super(props)
-
-    this.state = { transactions: [] }
-
-    this.getTransactions = this.getTransactions.bind(this)
-  }
-
-  getTransactions (token) {
-    const headers = { 'Authorization': `Bearer: ${token}` }
-    const from = moment.utc().month(this.props.month).subtract(1, 'month').endOf('month').format()
-    const to = moment.utc().month(this.props.month).endOf('month').format()
-
-    window.fetch(`${apiHost}/transactions?from=${from}&to=${to}`, { headers })
-      .then(resp => resp.json())
-      .then(json => this.setState({ transactions: json.transactions }))
-      .catch(console.log)
-  }
-
-  componentDidMount () {
-    firebase.auth().currentUser.getToken(true)
-      .then(this.getTransactions)
-  }
-
-  componentWillReceiveProps (nextProps) {
-    if (this.props.month === nextProps.month) return
-
-    firebase.auth().currentUser.getToken(true)
-      .then(this.getTransactions)
-  }
-
+class Transactions extends Component {
   render () {
     return (
       <table className='table table-sm'>
@@ -53,7 +20,7 @@ export default class Transactions extends Component {
         </thead>
         <tbody>
           {
-            this.state.transactions.map(t => {
+            this.props.transactions.map(t => {
               return (
                 <tr key={t.id}>
                   <td>
@@ -76,3 +43,11 @@ export default class Transactions extends Component {
     )
   }
 }
+
+const mapStateToProps = state => {
+  return { transactions: state.transactions.entries }
+}
+
+const TransactionsContainer = connect(mapStateToProps)(Transactions)
+
+export default TransactionsContainer

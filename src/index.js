@@ -7,10 +7,10 @@ import firebase from 'firebase'
 import configureStore from './store'
 import App from './app'
 import Home from './home'
-import Dashboard from './dashboard'
-import DashboardHome from './dashboard/home'
-import DashboardContent from './dashboard/content'
-import Categories from './categories/categories-container'
+import Dashboard from './dashboard/dashboard'
+import DashboardHome from './dashboard/home/home'
+import Categories from './categories/categories'
+import Transactions from './transactions/transactions'
 
 firebase.initializeApp({
   apiKey: 'AIzaSyCUc586MZvUba-no3aB-tt2mr7CLROVle8',
@@ -26,9 +26,8 @@ render((
       <Route path='/' component={App}>
         <IndexRoute component={Home} />
         <Route component={Dashboard}>
-          <Route path='/dashboard/home' component={DashboardHome} />
-          <Route path='/dashboard/transactions' component={DashboardContent} />
-          <Route path='/dashboard/transactions/months/:month' component={DashboardContent} />
+          <Route path='/dashboard' component={DashboardHome} />
+          <Route path='/dashboard/transactions' component={Transactions} />
           <Route path='/dashboard/categories' component={Categories} />
         </Route>
       </Route>

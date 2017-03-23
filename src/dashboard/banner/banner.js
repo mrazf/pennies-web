@@ -3,7 +3,7 @@ import { Link, withRouter } from 'react-router'
 
 import './banner.scss'
 
-const home = { title: 'Home', link: '/dashboard/home' }
+const home = { title: 'Dashboard Home', link: '/dashboard' }
 
 class Banner extends Component {
   render () {
