@@ -10,13 +10,12 @@ export default class TopNav extends Component {
     return (
       <header className='navbar navbar-light navbar-toggleable-md bd-navbar'>
         <nav className='container'>
-          <a className='navbar-brand' href='#'>Navbar</a>
+          <a className='navbar-brand' href='#'>Pennies</a>
           <div className='collapse navbar-collapse' id='navbarNavAltMarkup'>
             <div className='navbar-nav d-flex w-50 mr-auto'>
               <Link to='/' className='nav-item nav-link'>Home</Link>
               <a className='nav-item nav-link' href='#'>Features</a>
-              <a className='nav-item nav-link' href='#'>Pricing</a>
-              <a className='nav-item nav-link disabled' href='#'>Disabled</a>
+              <a className='nav-item nav-link' href='#'>About</a>
             </div>
           </div>
           <UserLinks />
