@@ -3,12 +3,15 @@ import { Link, withRouter } from 'react-router'
 
 import './banner.scss'
 
-const home = { title: 'Dashboard Home', link: '/dashboard' }
+const bannerPaths = {
+  dashboard: { title: 'Dashboard Home', link: '/dashboard' },
+  transactions: { title: 'Transactions', link: '/dashboard/transactions' },
+  categories: { title: 'Categories', link: '/dashboard/categories' }
+}
 
 class Banner extends Component {
   render () {
-    const path = this.props.router.location.pathname.split('/').filter((p) => p)
-    const displayPath = path.map(p => p.charAt(0).toUpperCase() + p.slice(1))
+    const paths = this.props.router.location.pathname.split('/').filter((p) => p)
 
     return (
       <div className='banner'>
@@ -16,10 +19,11 @@ class Banner extends Component {
           <p className='lead'>Going well this month</p>
           <ol className='breadcrumb'>
             {
-              [home].map((b, i) => {
+              paths.map((p, i) => {
+                const bannerPath = bannerPaths[p]
                 return (
                   <li className='breadcrumb-item' key={i}>
-                    <Link to={b.link}>{b.title}</Link>
+                    <Link to={bannerPath.link}>{bannerPath.title}</Link>
                   </li>
                 )
               })
