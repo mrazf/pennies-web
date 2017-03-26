@@ -14,7 +14,7 @@ export const fetchTransactions = (token) => {
 
     const headers = { 'Authorization': `Bearer: ${token}` }
 
-    return window.fetch(`${apiHost}/transactions`, { headers })
+    return window.fetch(`${apiHost}/transactions.json`, { headers })
       .then(response => response.json())
       .then(json => dispatch(receiveTransactions(json)))
   }

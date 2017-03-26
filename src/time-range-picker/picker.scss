@@ -1,0 +1,18 @@
+.picker {
+  margin-top: 2em;
+
+  .btn.active {
+    color: ghostwhite;
+    background-color: #1F366B;
+  }
+
+  .btn.active:hover {
+    cursor: pointer;
+    background-color: #1F366B;
+  }
+
+  .btn:hover {
+    cursor: hand;
+    background-color: #7C8EB7;
+  }
+}

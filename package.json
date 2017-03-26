@@ -6,7 +6,7 @@
   "license": "MIT",
   "scripts": {
     "dev": "API_HOST=\"'https://quiet-reaches-46541.herokuapp.com'\" webpack-dev-server",
-    "dev:local-api": "API=HEROKU",
+    "dev:stub": "API_HOST=\"'http://localhost:8080/stubs'\" webpack-dev-server",
     "lint": "standard src/**/*.js",
     "build": "webpack"
   },
@@ -20,11 +20,9 @@
   },
   "dependencies": {
     "bootstrap": "4.0.0-alpha.6",
-    "bulma": "^0.3.2",
     "classnames": "^2.2.5",
     "firebase": "^3.7.0",
     "font-awesome": "^4.7.0",
-    "lodash": "^4.17.4",
     "moment": "^2.17.1",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
@@ -36,8 +34,7 @@
     "redux-thunk": "^2.2.0",
     "sass-loader": "^6.0.2",
     "standard": "^9.0.1",
-    "webpack": "^2.2.1",
-    "whatwg-fetch": "^2.0.3"
+    "webpack": "^2.2.1"
   },
   "devDependencies": {
     "babel-core": "^6.23.1",

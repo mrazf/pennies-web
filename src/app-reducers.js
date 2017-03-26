@@ -1,4 +1,5 @@
 import { combineReducers } from 'redux'
+import moment from 'moment'
 import categories from './categories/reducers'
 
 const user = (state = { data: null }, action) => {
@@ -27,6 +28,13 @@ const transactions = (state = { entries: [], requested: false, received: false }
   }
 }
 
-const pennies = combineReducers({ user, token, transactions, categories })
+const selectedMonth = (state = { number: moment().month() }, action) => {
+  switch (action.type) {
+    case 'CHANGE_MONTH': return { ...state, number: action.monthNumber }
+    default: return state
+  }
+}
+
+const pennies = combineReducers({ user, token, transactions, categories, selectedMonth })
 
 export default pennies

@@ -31,16 +31,16 @@ export const fetchToken = (user) => {
   }
 }
 
-export const receiveTransactions = (json) => {
-  return { type: 'RECEIVE_TRANSACTIONS', transactions: json.transactions }
+export const receiveTransactions = (transactions) => {
+  return { type: 'RECEIVE_TRANSACTIONS', transactions }
 }
 
 export const fetchTransactions = () => {
   return (dispatch) => {
     dispatch(requestTransactions)
 
-    return window.fetch(`/transactions`)
-      .then(response => response.json())
-      .then(json => dispatch(receiveTransactions(json)))
+    return window.fetch(`/transactions.json`)
+      .then(response => response.json().transactions)
+      .then(transactions => dispatch(receiveTransactions(transactions)))
   }
 }
