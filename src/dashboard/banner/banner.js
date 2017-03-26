@@ -19,11 +19,10 @@ class Banner extends Component {
           <p className='lead'>Going well this month</p>
           <ol className='breadcrumb'>
             {
-              paths.map((p, i) => {
-                const bannerPath = bannerPaths[p]
+              [bannerPaths.dashboard, bannerPaths.transactions].map((p, i) => {
                 return (
                   <li className='breadcrumb-item' key={i}>
-                    <Link to={bannerPath.link}>{bannerPath.title}</Link>
+                    <Link to={p.link}>{p.title}</Link>
                   </li>
                 )
               })

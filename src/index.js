@@ -9,8 +9,9 @@ import App from './app'
 import Home from './home'
 import Dashboard from './dashboard/dashboard'
 import DashboardHome from './dashboard/home/home'
-import Categories from './categories/categories'
 import Transactions from './transactions/transactions'
+import Transaction from './transactions/transaction'
+import Categories from './categories/categories'
 
 firebase.initializeApp({
   apiKey: 'AIzaSyCUc586MZvUba-no3aB-tt2mr7CLROVle8',
@@ -28,6 +29,7 @@ render((
         <Route component={Dashboard}>
           <Route path='/dashboard' component={DashboardHome} />
           <Route path='/dashboard/transactions' component={Transactions} />
+          <Route path='/dashboard/transactions/:id' component={Transaction} />
           <Route path='/dashboard/categories' component={Categories} />
         </Route>
       </Route>

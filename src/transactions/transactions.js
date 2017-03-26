@@ -31,7 +31,7 @@ class Transactions extends Component {
                     return (
                       <tr key={t.id}>
                         <td>
-                          <Link to={`/dashboard/transactions/months/${this.props.month + 1}/${t.id}`}>
+                          <Link to={`/dashboard/transactions/${t.id}`}>
                             Detail
                           </Link>
                         </td>
