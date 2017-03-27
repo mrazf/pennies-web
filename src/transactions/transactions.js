@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { Link } from 'react-router'
 import moment from 'moment'
 import Picker from '../time-range-picker/picker'
+import CategoryForm from './inline-category-form'
 
 class Transactions extends Component {
   render () {
@@ -16,7 +16,6 @@ class Transactions extends Component {
             <table className='table table-sm'>
               <thead>
                 <tr>
-                  <th />
                   <th>Date & Time</th>
                   <th>Category</th>
                   <th>Amount</th>
@@ -30,13 +29,12 @@ class Transactions extends Component {
                   this.props.transactions.map(t => {
                     return (
                       <tr key={t.id}>
-                        <td>
-                          <Link to={`/dashboard/transactions/${t.id}`}>
-                            Detail
-                          </Link>
-                        </td>
                         <td>{moment(t.created).format('ddd Do, HH:mm:ss')}</td>
-                        <td>Uncategorized</td>
+                        <td>
+                          {
+                            t.metadata.category ? t.metadata.category : <CategoryForm />
+                          }
+                        </td>
                         <td>{t.amount}</td>
                         <td>-</td>
                         <td>{t.description}</td>
