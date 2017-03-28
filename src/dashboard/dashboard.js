@@ -1,10 +1,19 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-
-import { fetchTransactions } from './dashboard-actions'
+import firebase from 'firebase'
+import { userSetup, noUser } from './dashboard-actions'
 import Banner from './banner/banner'
 
 class Dashboard extends Component {
+  componentDidMount () {
+    firebase.auth().onAuthStateChanged(userObj => {
+      const { user, userSetupDiff, loggedOutUser } = this.props
+
+      if (userObj === null) return loggedOutUser()
+      if (userObj !== user) return userSetupDiff(userObj)
+    })
+  }
+
   render () {
     return (
       <div className='dashboard'>
@@ -13,30 +22,21 @@ class Dashboard extends Component {
       </div>
     )
   }
-
-  componentWillReceiveProps (nextProps) {
-    const { token, transactions, selectedMonth, fetchTransactionsDiff } = nextProps
-
-    if (token.value && !transactions.requested) {
-      fetchTransactionsDiff(token.value, selectedMonth)
-    }
-
-    if (this.props.selectedMonth !== selectedMonth) {
-      fetchTransactionsDiff(token.value, selectedMonth)
-    }
-  }
 }
 
 const mapStateToProps = state => {
   return {
-    token: state.token,
+    user: state.user.data,
     transactions: state.transactions,
     selectedMonth: state.selectedMonth.number
   }
 }
 
 const mapDispatchToProps = dispatch => {
-  return { fetchTransactionsDiff: (token, selectedMonth) => dispatch(fetchTransactions(token, selectedMonth)) }
+  return {
+    userSetupDiff: userObj => dispatch(userSetup(userObj)),
+    loggedOutUser: () => dispatch(noUser(null))
+  }
 }
 
 const DashboardContainer = connect(mapStateToProps, mapDispatchToProps)(Dashboard)

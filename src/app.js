@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import firebase from 'firebase'
 
 import { addUser, noUser, fetchToken } from './app-actions'
 import TopNav from './top-nav'
@@ -8,23 +7,6 @@ import TopNav from './top-nav'
 import './app.scss'
 
 class App extends Component {
-  componentDidMount () {
-    firebase.auth().onAuthStateChanged(userObj => {
-      const { user, loggedInUser, loggedOutUser } = this.props
-
-      if (userObj !== user) {
-        return userObj ? loggedInUser(userObj) : loggedOutUser()
-      }
-    })
-  }
-
-  componentWillReceiveProps (nextProps) {
-    if (nextProps.user && !nextProps.token.requested) {
-      const { token, fetchTokenDiff } = this.props
-      fetchTokenDiff(nextProps.user)
-    }
-  }
-
   render () {
     return (
       <div>

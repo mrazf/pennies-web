@@ -19,7 +19,8 @@ class Picker extends Component {
               <button
                 type='button'
                 onClick={() => changeMonth(i)}
-                className={classes}>
+                className={classes}
+                key={i}>
                 {m}
               </button>
             )

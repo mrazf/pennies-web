@@ -30,10 +30,7 @@ class Transactions extends Component {
                     return (
                       <tr key={t.id}>
                         <td>{moment(t.created).format('ddd Do, HH:mm:ss')}</td>
-                        <td>
-                          {
-                            t.metadata.category ? t.metadata.category : <CategoryForm />
-                          }
+                        <td>{ <CategoryForm category={t.metadata.category} /> }
                         </td>
                         <td>{t.amount}</td>
                         <td>-</td>

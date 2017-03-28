@@ -1,30 +1,29 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { Control } from 'react-redux-form'
 import './inline-category-form.scss'
 
-class CategorySelect extends Component {
-  render () {
-    return (
-      <Control.select model='user.faveColor' className='form-control form-control-sm'>
-        <option value='red'>red</option>
-        <option value='green'>green</option>
-        <option value='blue'>blue</option>
-      </Control.select>
-    )
-  }
-}
+class Uncategorized extends Component {
+  constructor (props) {
+    super(props)
 
-class CategoryForm extends Component {
+    this.state = {
+      value: 'Select a category'
+    }
+  }
+
   render () {
     return (
-      <div className='categoryForm form-group form-inline'>
-        Uncategorized
-        {
-          this.props.categories.length > 0 ? <CategorySelect /> : <Control.text />
-        }
-        <button type='button' className='btn btn-sm btn-outline-primary'>New Category</button>
-      </div>
+      <form className='form-inline'>
+        <select value={this.state.value}>
+          <option disabled>{ this.state.value }</option>
+          {
+            this.props.categories.map((c, i) => {
+              return <option className='form-text' value={c} key={i}>{c}</option>
+            })
+          }
+        </select>
+        <button type='submit' className='btn btn-sm btn-outline-primary'>New Category</button>
+      </form>
     )
   }
 }
@@ -33,4 +32,16 @@ const mapStateToProps = state => {
   return { categories: state.categories.entries }
 }
 
-export default connect(mapStateToProps)(CategoryForm)
+const UncategorizedContainer = connect(mapStateToProps)(Uncategorized)
+
+class Category extends Component {
+  render () {
+    return (
+      <div className='categoryForm form-group form-inline'>
+        { this.props.category ? this.props.category : <UncategorizedContainer /> }
+      </div>
+    )
+  }
+}
+
+export default Category

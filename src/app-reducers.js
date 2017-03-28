@@ -1,7 +1,7 @@
 import { combineReducers } from 'redux'
 import { combineForms } from 'react-redux-form'
 import moment from 'moment'
-import categories from './categories/reducers'
+import categories from './dashboard/reducers'
 
 const user = (state = { data: null }, action) => {
   switch (action.type) {
@@ -36,11 +36,6 @@ const selectedMonth = (state = { number: moment().month() }, action) => {
   }
 }
 
-const initialUserState = {
-  firstName: '',
-  lastName: ''
-}
-
-const pennies = combineReducers({ user, token, transactions, categories, selectedMonth, form: combineForms({ user: initialUserState }) })
+const pennies = combineReducers({ user, token, transactions, categories, selectedMonth })
 
 export default pennies
