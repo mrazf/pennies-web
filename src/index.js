@@ -10,7 +10,6 @@ import Home from './home'
 import Dashboard from './dashboard/dashboard'
 import DashboardHome from './dashboard/home/home'
 import Transactions from './transactions/transactions'
-import Transaction from './transactions/transaction'
 import Categories from './categories/categories'
 
 firebase.initializeApp({
@@ -31,7 +30,6 @@ render((
         <Route component={Dashboard}>
           <Route path='/dashboard' component={DashboardHome} />
           <Route path='/dashboard/transactions' component={Transactions} />
-          <Route path='/dashboard/transactions/:id' component={Transaction} />
           <Route path='/dashboard/categories' component={Categories} />
         </Route>
       </Route>
