@@ -2,12 +2,17 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import moment from 'moment'
 import Picker from '../time-range-picker/picker'
-import CategoryForm from './inline-category-form'
+import Categorize from './categorize/form'
+import { updateCategory } from './actions'
+import './transactions.scss'
 
 class Transactions extends Component {
   render () {
+    const ids = Object.keys(this.props.transactions)
+    const transactions = ids.map(id => this.props.transactions[id])
+
     return (
-      <div className='container-fluid'>
+      <div className='transactions container-fluid'>
         <div className='row'>
           <div className='col-1 offset-1'>
             <Picker />
@@ -26,11 +31,17 @@ class Transactions extends Component {
               </thead>
               <tbody>
                 {
-                  this.props.transactions.map(t => {
+                  transactions.map(t => {
+                    const updateThisCategory = categoryId => this.props.updateCategory(t, categoryId)
+                    const categoryId = t.metadata.category
+
                     return (
                       <tr key={t.id}>
                         <td>{moment(t.created).format('ddd Do, HH:mm:ss')}</td>
-                        <td>{ <CategoryForm category={t.metadata.category} /> }
+                        <td>
+                          {
+                            categoryId ? this.props.categories[categoryId] : <Categorize updateCategory={updateThisCategory} />
+                          }
                         </td>
                         <td>{t.amount}</td>
                         <td>-</td>
@@ -50,9 +61,13 @@ class Transactions extends Component {
 }
 
 const mapStateToProps = state => {
-  return { transactions: state.transactions.entries }
+  return { transactions: state.transactions.entries, categories: state.categories.entries }
 }
 
-const TransactionsContainer = connect(mapStateToProps)(Transactions)
+const mapDispatchToProps = dispatch => {
+  return { updateCategory: (transaction, categoryUpdate) => dispatch(updateCategory(transaction, categoryUpdate)) }
+}
+
+const TransactionsContainer = connect(mapStateToProps, mapDispatchToProps)(Transactions)
 
 export default TransactionsContainer

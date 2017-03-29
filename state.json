@@ -1,14 +1,13 @@
 {
   "user": {},
   "transactions": {
-    "entries": [
-      {
-        
-      }
-    ]
+    "entries": {
+      "id": "transaction"
+    }
   },
   "categories": {
-    "fromTransactions": [],
-    "userDefined": []
+    "entries": {
+      "i-am-a-sanitised-string": "I'm not"
+    }
   }
 }
