@@ -21,19 +21,20 @@ const token = (state = { value: null, requested: false, received: false }, actio
   }
 }
 
-const transactions = (state = { entries: [], requested: false, received: false }, action) => {
+const transactions = (state = { allIds: [], byId: [], requested: false, received: false }, action) => {
   switch (action.type) {
     case 'REQUEST_TRANSACTIONS':
       return { ...state, requested: true }
     case 'RECEIVE_TRANSACTIONS':
-      const entries = action.transactions.reduce((acc, t) => {
+      const allIds = action.transactions.map(t => t.id)
+      const byId = action.transactions.reduce((acc, t) => {
         acc[t.id] = t
 
         return acc
       }, {})
-      return { ...state, received: true, entries }
+      return { ...state, received: true, byId, allIds }
     case 'CATEGORY_UPDATE_SUCCESS':
-      return { ...state, entries: { ...state.entries, [action.transaction.id]: action.transaction } }
+      return { ...state, byId: { ...state.byId, [action.transaction.id]: action.transaction } }
     default: return state
   }
 }

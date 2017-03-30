@@ -59,7 +59,7 @@ class Transactions extends Component {
 }
 
 const mapStateToProps = state => {
-  return { transactions: state.transactions.entries, categories: state.categories.entries }
+  return { transactions: state.transactions.byId, categories: state.categories.byId }
 }
 
 const mapDispatchToProps = dispatch => {

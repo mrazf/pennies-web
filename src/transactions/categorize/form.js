@@ -59,7 +59,7 @@ class Uncategorized extends Component {
 }
 
 const mapStateToProps = state => {
-  return { categories: state.categories.entries }
+  return { categories: state.categories.byId }
 }
 
 export default connect(mapStateToProps)(Uncategorized)

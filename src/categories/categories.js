@@ -1,36 +1,40 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { transactionsToCategories } from './actions'
+import Card from './category'
 
 class Categories extends Component {
   render () {
+    const { categories, transactions } = this.props
+
     return (
-      <div className='categories'>
-        { this.props.categories }
+      <div className='categories container'>
+        <div className='row'>
+          {
+
+            Object.keys(categories).map(c => {
+              const transactionsForCategory = Object.keys(transactions).reduce((acc, t) => {
+                if (transactions[t].metadata.category === c) acc.push(transactions[t])
+                
+                return acc
+              }, [])
+
+              return (
+                <div className='col-4'>
+                  <Card title={categories[c]} transactions={transactionsForCategory} />
+                </div>
+              )
+            })
+          }
+        </div>
       </div>
     )
-  }
-
-  componentWillReceiveProps (nextProps) {
-    if (this.props.transactions === nextProps.transactions) return
-
-    const { transactions, transactionsToCategories } = nextProps
-
-    transactionsToCategories(transactions)
   }
 }
 
 const mapStateToProps = (state) => {
-  return {
-    transactions: state.transactions.entries,
-    categories: state.categories.entries
-  }
+  return { categories: state.categories.byId, transactions: state.transactions.byId }
 }
 
-const mapDispatchToProps = dispatch => {
-  return { transactionsToCategories: transactions => dispatch(transactionsToCategories(transactions)) }
-}
-
-const CategoriesContainer = connect(mapStateToProps, mapDispatchToProps)(Categories)
+const CategoriesContainer = connect(mapStateToProps)(Categories)
 
 export default CategoriesContainer

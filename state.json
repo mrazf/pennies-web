@@ -9,8 +9,7 @@
     }
   },
   "categories": {
-    "entries": {
-      "i-am-a-sanitised-string": "I'm not"
-    }
+    "byId": {},
+    "withTransactions": {}
   }
 }
