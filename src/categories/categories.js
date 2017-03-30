@@ -14,7 +14,7 @@ class Categories extends Component {
             Object.keys(categories).map(c => {
               const transactionsForCategory = Object.keys(transactions).reduce((acc, t) => {
                 if (transactions[t].metadata.category === c) acc.push(transactions[t])
-                
+
                 return acc
               }, [])
 

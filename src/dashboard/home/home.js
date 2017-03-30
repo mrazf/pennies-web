@@ -20,15 +20,6 @@ const dashboardItems = [
       { title: 'By Day', link: '/dashboard/home/transactions/by-day' },
       { title: 'By Year', link: '/dashboard/home/transactions/by-year' }
     ]
-  },
-  {
-    title: 'Tags',
-    description: 'A transaction can be in one category but have multiple tags, view them here',
-    links: [
-      { title: 'By Month', link: '/dashboard/tags' },
-      { title: 'By Day', link: '/dashboard/tags/by-day' },
-      { title: 'By Year', link: '/dashboard/tags/by-year' }
-    ]
   }
 ]
 
