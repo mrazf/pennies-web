@@ -44,9 +44,15 @@ class Uncategorized extends Component {
               })
             }
           </select>
-          <button type='submit' className='btn btn-sm btn-outline-success' disabled={this.state.updateDisabled}>Update</button>
+          <button type='submit' className='btn btn-sm btn-outline-success' disabled={this.state.updateDisabled}>
+            <strong>
+              UPDATE
+            </strong>
+          </button>
         </div>
-        <button type='submit' className='btn btn-sm btn-outline-primary'>New Category</button>
+        <button type='submit' className='btn btn-sm btn-outline-primary'>
+          <strong>NEW CATEGORY</strong>
+        </button>
       </form>
     )
   }

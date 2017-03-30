@@ -24,7 +24,6 @@ class Transactions extends Component {
                   <th>Date & Time</th>
                   <th>Category</th>
                   <th>Amount</th>
-                  <th>Merchant</th>
                   <th>Description</th>
                   <th>Monzo Category</th>
                 </tr>
@@ -44,7 +43,6 @@ class Transactions extends Component {
                           }
                         </td>
                         <td>{t.amount}</td>
-                        <td>-</td>
                         <td>{t.description}</td>
                         <td>{t.category}</td>
                       </tr>

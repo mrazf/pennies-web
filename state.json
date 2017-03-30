@@ -1,5 +1,8 @@
 {
-  "user": {},
+  "user": {
+    "token": "firebase-token",
+    "raw": "firebase-raw, probably dont need"
+  },
   "transactions": {
     "entries": {
       "id": "transaction"

@@ -21,7 +21,7 @@ class Uncategorized extends Component {
             })
           }
         </select>
-        <button type='submit' className='btn btn-sm btn-outline-primary'>New Category</button>
+        <button type='submit' className='btn btn-sm btn-outline-primary'>NEW CATEGORY</button>
       </form>
     )
   }
