@@ -1,14 +1,18 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import Card from './category'
+import NewCategoryCard from './new-category-card'
 
 class Categories extends Component {
   render () {
     const { categories, transactions } = this.props
 
     return (
-      <div className='categories container'>
+      <div className='categories container-fluid'>
         <div className='row'>
+          <div className='col-2 offset-xl-1'>
+            <NewCategoryCard />
+          </div>
           {
 
             Object.keys(categories).map(c => {
@@ -19,7 +23,7 @@ class Categories extends Component {
               }, [])
 
               return (
-                <div className='col-4'>
+                <div className='col-2'>
                   <Card title={categories[c]} transactions={transactionsForCategory} />
                 </div>
               )
