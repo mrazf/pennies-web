@@ -16,7 +16,6 @@ class Banner extends Component {
     return (
       <div className='banner'>
         <div className='container'>
-          <p className='lead'>Going well this month</p>
           <ol className='breadcrumb'>
             {
               [bannerPaths.dashboard, bannerPaths.transactions].map((p, i) => {
