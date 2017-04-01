@@ -1,7 +1,9 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import Masonry from 'react-masonry-component'
 import Card from './category'
 import NewCategoryCard from './new-category-card'
+import './categories.scss'
 
 class Categories extends Component {
   render () {
@@ -9,8 +11,8 @@ class Categories extends Component {
 
     return (
       <div className='categories container-fluid'>
-        <div className='row'>
-          <div className='col-sm-6 col-xl-2 offset-xl-1'>
+        <Masonry className='row'>
+          <div className='col-md-6 col-xl-3'>
             <NewCategoryCard />
           </div>
           {
@@ -23,13 +25,13 @@ class Categories extends Component {
               }, [])
 
               return (
-                <div className='col-sm-6 col-xl-2'>
+                <div className='col-md-6 col-xl-3'>
                   <Card title={categories[c]} transactions={transactionsForCategory} />
                 </div>
               )
             })
           }
-        </div>
+        </Masonry>
       </div>
     )
   }
