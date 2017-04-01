@@ -1,7 +1,7 @@
 import { combineReducers } from 'redux'
 import { combineForms } from 'react-redux-form'
 import moment from 'moment'
-import categories from './dashboard/reducers'
+import categories from './categories/reducers'
 
 const user = (state = { data: null }, action) => {
   switch (action.type) {

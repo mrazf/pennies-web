@@ -13,6 +13,7 @@ export default class Category extends Component {
               })
             }
           </ol>
+          <button type='button' className='btn btn-sm btn-outline-danger'>Delete</button>
         </div>
       </div>
     )

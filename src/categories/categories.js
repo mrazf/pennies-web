@@ -10,7 +10,7 @@ class Categories extends Component {
     return (
       <div className='categories container-fluid'>
         <div className='row'>
-          <div className='col-2 offset-xl-1'>
+          <div className='col-sm-6 col-xl-2 offset-xl-1'>
             <NewCategoryCard />
           </div>
           {
@@ -23,7 +23,7 @@ class Categories extends Component {
               }, [])
 
               return (
-                <div className='col-2'>
+                <div className='col-sm-6 col-xl-2'>
                   <Card title={categories[c]} transactions={transactionsForCategory} />
                 </div>
               )
