@@ -14,7 +14,7 @@ class Home extends Component {
       <div className='dashboard-home'>
         <div className='container-fluid'>
           <div className='row'>
-            <div className='col-sm-6 col-xl-3'>
+            <div className='col-sm-12 col-xl-3'>
               <CategoryOverview
                 category={{ 'name': 'Uncategorized' }}
                 transactions={uncategorized} />
@@ -25,7 +25,7 @@ class Home extends Component {
                 const category = { slug: c, name: categories[c] }
 
                 return (
-                  <div className='col-sm-6 col-xl-3'>
+                  <div className='col-sm-12 col-xl-3'>
                     <CategoryOverview
                       category={category}
                       transactions={transactionsForCategory}
