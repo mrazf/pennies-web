@@ -9,7 +9,11 @@
     }
   },
   "categories": {
-    "byId": {},
-    "withTransactions": {}
+    "byId": {
+      "id": "id",
+      "name": "name",
+      "monthlySpend": 650000,
+      "transactionIds": []
+    }
   }
 }

@@ -1,0 +1,19 @@
+.categoryOverview {
+  margin-bottom: 1rem;
+
+  .title {
+    margin-bottom: 0;
+  }
+  
+  .info {
+    .badge {
+      margin-right: 0.5rem;
+      vertical-align: text-top;
+    }
+  }
+
+  .card-footer {
+    padding-top: 0.25rem;
+    padding-bottom: 0.35rem;
+  }
+}

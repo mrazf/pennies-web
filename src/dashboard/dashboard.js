@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import firebase from 'firebase'
 import { userSetup, noUser } from './dashboard-actions'
 import Banner from './banner/banner'
+import Picker from './time-range-picker/picker'
 
 class Dashboard extends Component {
   componentDidMount () {
@@ -18,6 +19,7 @@ class Dashboard extends Component {
     return (
       <div className='dashboard'>
         <Banner />
+        <Picker />
         { this.props.children }
       </div>
     )
