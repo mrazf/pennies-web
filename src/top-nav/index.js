@@ -8,17 +8,19 @@ import './index.scss'
 export default class TopNav extends Component {
   render () {
     return (
-      <header className='navbar navbar-light navbar-toggleable-md bd-navbar'>
+      <header className='top-nav'>
         <nav className='container'>
-          <a className='navbar-brand' href='#'>Pennies</a>
-          <div className='collapse navbar-collapse' id='navbarNavAltMarkup'>
-            <div className='navbar-nav d-flex w-50 mr-auto'>
-              <Link to='/' className='nav-item nav-link'>Home</Link>
-              <a className='nav-item nav-link' href='#'>Features</a>
-              <a className='nav-item nav-link' href='#'>About</a>
+          <div className='row'>
+            <div className='col-sm-7 col-7'>
+              <a className='nav-item navbar-brand' href='#'>Pennies</a>
+              <Link to='/' className='collapse nav-item nav-link'>Home</Link>
+              <a className='collapse nav-item nav-link' href='#'>Features</a>
+              <a className='collapse nav-item nav-link' href='#'>About</a>
+            </div>
+            <div className='col-sm-5 col-4'>
+              <UserLinks />
             </div>
           </div>
-          <UserLinks />
         </nav>
       </header>
     )
