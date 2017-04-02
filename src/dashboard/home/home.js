@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import R from 'ramda'
-import CategoryOverview from './category-overview'
+import CategoryOverview from '../category-overview/overview'
 import './home.scss'
 
 class Home extends Component {
@@ -14,20 +14,20 @@ class Home extends Component {
       <div className='dashboard-home'>
         <div className='container-fluid'>
           <div className='row'>
-            <div className='col-xl-3'>
+            <div className='col-sm-6 col-xl-3'>
               <CategoryOverview
-                category='Uncategorized'
+                category={{ 'name': 'Uncategorized' }}
                 transactions={uncategorized} />
             </div>
             {
               categoryIds.map(c => {
                 const transactionsForCategory = this.props.transactions.filter(t => t.metadata.category === c)
-                console.log(transactionsForCategory)
+                const category = { slug: c, name: categories[c] }
 
                 return (
-                  <div className='col-xl-3'>
+                  <div className='col-sm-6 col-xl-3'>
                     <CategoryOverview
-                      category={categories[c]}
+                      category={category}
                       transactions={transactionsForCategory}
                       key={c} />
                   </div>

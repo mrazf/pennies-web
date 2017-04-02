@@ -1,4 +1,11 @@
+@import "../../app.scss";
+
 .dashboard-home {
-  margin-left: 10rem;
-  margin-right: 10rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
+
+  @include media-breakpoint-up(xl) {
+    margin-left: 10rem;
+    margin-right: 10rem;
+  }
 }

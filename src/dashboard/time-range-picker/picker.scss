@@ -1,0 +1,17 @@
+.time-range-picker {
+  margin-top: 2em;
+
+  .btn.active {
+    color: ghostwhite;
+    background-color: #A07621;
+  }
+
+  .btn.active:hover {
+    cursor: pointer;
+    background-color: #A07621;
+  }
+
+  .btn:hover {
+    cursor: hand;
+  }
+}
