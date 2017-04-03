@@ -4,6 +4,7 @@ import firebase from 'firebase'
 import { userSetup, noUser } from './dashboard-actions'
 import Banner from './banner/banner'
 import Picker from './time-range-picker/picker'
+import ViewPicker from './view-picker'
 
 class Dashboard extends Component {
   componentDidMount () {
@@ -19,6 +20,7 @@ class Dashboard extends Component {
     return (
       <div className='dashboard'>
         <Banner />
+        <ViewPicker />
         <Picker />
         { this.props.children }
       </div>
