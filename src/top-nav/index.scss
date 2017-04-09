@@ -1,8 +1,22 @@
-@import "../app";
+@import '../app';
 
 .top-nav {
+  line-height: 2.4em;
+  vertical-align: middle;
+  background-color: #034747;
+  color: ghostwhite;
+
   .nav-item {
+    color: ghostwhite;
     display: inline-block
+  }
+
+  .banner {
+    padding: 0 15px;
+
+    h1 {
+      margin-top: 0.5em;
+    }
   }
 
   .collapse {

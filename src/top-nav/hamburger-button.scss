@@ -1,0 +1,13 @@
+$hamburger-types: (slide);
+$hamburger-padding-x: 18px;
+$hamburger-padding-y: 0;
+$hamburger-layer-color: ghostwhite;
+$hamburger-layer-width: 30px;
+$hamburger-layer-spacing: 4px;
+$hamburger-layer-height: 3px;
+
+.hamburger-box {
+  margin-top: 18px;
+}
+
+@import "~hamburgers/_sass/hamburgers/hamburgers.scss";

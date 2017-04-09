@@ -12,16 +12,12 @@ class Picker extends Component {
     return (
       <div className='time-range-picker container'>
         <div className='row justify-content-center'>
-          <div className='small btn-group'>
-            <button type='button' className='btn btn-secondary'>2017</button>
-            <button type='button' className='btn btn-secondary'>April</button>
-          </div>
-          <div className='large btn-group'>
+          <div className='btn-group'>
             <button type='button' className='btn btn-secondary'>2017</button>
             {
               moment.monthsShort().map((m, i) => {
                 const isSelectedMonth = selectedMonth === i
-                const classes = classnames('btn btn-secondary text-left', {active: isSelectedMonth, collapse: !isSelectedMonth})
+                const classes = classnames('btn btn-secondary text-left', {active: isSelectedMonth, 'hidden-sm-down': !isSelectedMonth})
 
                 return (
                   <button

@@ -1,7 +1,13 @@
-@import "~hamburgers/_sass/hamburgers/hamburgers.scss";
-@import "../app.scss";
+@import "../../app";
 
 .side-bar {
+  .sidebar__divider {
+    border-bottom: 1px solid #7C8EB7
+  }
+
+  .bm-menu-wrap {
+    width: 14em;
+  }
 
   button.hamburger {
     top: 34px;
@@ -36,9 +42,8 @@
 
   /* General sidebar styles */
   .bm-menu {
-    background: #1F366B;
-    padding: 2.5em 1.5em 0;
-    font-size: 1.15em;
+    background: #e6e6e6;
+    padding: 0 0.5em 0;
   }
 
   @include media-breakpoint-up(sm) {
@@ -55,16 +60,18 @@
   /* Wrapper for item list */
   .bm-item-list {
     color: black;
-    padding: 0.8em;
+    padding: 1em 0.8em 0.8em 0;
     
     p {
+      padding-left: 1.5em;
       vertical-align: middle;
       margin-bottom: 0;
-      line-height: 3em;
-    }
+      line-height: 2.5em;
 
-    p.active {
-      background-color: lightgray
+      .badge {
+        margin-left: 10px;
+        vertical-align: text-top;
+      }
     }
 
     .last-updated {

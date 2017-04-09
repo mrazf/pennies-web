@@ -1,9 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import firebase from 'firebase'
-import Menu from '../side-bar/menu'
 import { userSetup, noUser } from './dashboard-actions'
-import Banner from './banner/banner'
 import Picker from './time-range-picker/picker'
 
 class Dashboard extends Component {
@@ -19,8 +17,6 @@ class Dashboard extends Component {
   render () {
     return (
       <div className='dashboard'>
-        <Menu />
-        <Banner />
         <Picker />
         { this.props.children }
       </div>

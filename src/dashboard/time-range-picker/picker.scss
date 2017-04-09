@@ -1,26 +1,20 @@
 .time-range-picker {
   margin-top: 1em;
-  margin-bottom: 1em;
-
-  .collapse {
-    display: none;
-  }
+  margin-bottom: 2em;
 
   .btn.active {
     color: ghostwhite;
-    background-color: #A07621;
+    background-color: #334A80;
   }
 
   .btn.active:hover {
     cursor: pointer;
-    background-color: #A07621;
+    background-color: #1F366B;
   }
 
   .btn:hover {
     cursor: hand;
-  }
-
-  .large {
-    display: none;
+    color: ghostwhite;
+    background-color: #1F366B;
   }
 }
