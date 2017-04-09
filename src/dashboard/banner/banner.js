@@ -16,17 +16,7 @@ class Banner extends Component {
     return (
       <div className='banner'>
         <div className='container'>
-          <ol className='breadcrumb'>
-            {
-              [bannerPaths.dashboard, bannerPaths.transactions].map((p, i) => {
-                return (
-                  <li className='breadcrumb-item' key={i}>
-                    <Link to={p.link}>{p.title}</Link>
-                  </li>
-                )
-              })
-            }
-          </ol>
+          <h1 className='h4 text-center'>Dashboard</h1>
         </div>
       </div>
     )

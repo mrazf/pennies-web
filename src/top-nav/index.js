@@ -11,13 +11,13 @@ export default class TopNav extends Component {
       <header className='top-nav'>
         <nav className='container'>
           <div className='row'>
-            <div className='col-sm-7 col-7'>
+            <div className='col-3 col-md-8'>
               <a className='nav-item navbar-brand' href='#'>Pennies</a>
               <Link to='/' className='collapse nav-item nav-link'>Home</Link>
               <a className='collapse nav-item nav-link' href='#'>Features</a>
               <a className='collapse nav-item nav-link' href='#'>About</a>
             </div>
-            <div className='col-sm-5 col-4'>
+            <div className='col-9 col-md-4'>
               <UserLinks />
             </div>
           </div>

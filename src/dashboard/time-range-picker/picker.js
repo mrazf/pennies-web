@@ -10,13 +10,18 @@ class Picker extends Component {
     const { selectedMonth, changeMonth } = this.props
 
     return (
-      <div className='time-range-picker container' style={{marginBottom: '2rem'}}>
+      <div className='time-range-picker container'>
         <div className='row justify-content-center'>
-          <div className='btn-group'>
+          <div className='small btn-group'>
+            <button type='button' className='btn btn-secondary'>2017</button>
+            <button type='button' className='btn btn-secondary'>April</button>
+          </div>
+          <div className='large btn-group'>
             <button type='button' className='btn btn-secondary'>2017</button>
             {
               moment.monthsShort().map((m, i) => {
-                const classes = classnames('btn btn-secondary text-left', {active: selectedMonth === i})
+                const isSelectedMonth = selectedMonth === i
+                const classes = classnames('btn btn-secondary text-left', {active: isSelectedMonth, collapse: !isSelectedMonth})
 
                 return (
                   <button

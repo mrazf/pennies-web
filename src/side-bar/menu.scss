@@ -1,0 +1,79 @@
+@import "~hamburgers/_sass/hamburgers/hamburgers.scss";
+@import "../app.scss";
+
+.side-bar {
+
+  button.hamburger {
+    top: 34px;
+    position: fixed;
+  }
+
+  /* Position and sizing of burger button */
+  .bm-burger-button {
+    position: fixed;
+    width: 30px;
+    height: 15px;
+    left: 15px;
+    top: 50px;
+  }
+
+  /* Color/shape of burger icon bars */
+  .bm-burger-bars {
+    height: 17%;
+    background: #373a47;
+  }
+
+  /* Position and sizing of clickable cross button */
+  .bm-cross-button {
+    height: 24px;
+    width: 24px;
+  }
+
+  /* Color/shape of close button cross */
+  .bm-cross {
+    background: #bdc3c7;
+  }
+
+  /* General sidebar styles */
+  .bm-menu {
+    background: #1F366B;
+    padding: 2.5em 1.5em 0;
+    font-size: 1.15em;
+  }
+
+  @include media-breakpoint-up(sm) {
+    .bm-menu {
+      background: none;
+    }
+  }
+
+  /* Morph shape necessary with bubble or elastic */
+  .bm-morph-shape {
+    fill: #373a47;
+  }
+
+  /* Wrapper for item list */
+  .bm-item-list {
+    color: black;
+    padding: 0.8em;
+    
+    p {
+      vertical-align: middle;
+      margin-bottom: 0;
+      line-height: 3em;
+    }
+
+    p.active {
+      background-color: lightgray
+    }
+
+    .last-updated {
+      line-height: 2em;
+    }
+  }
+
+  /* Styling of overlay */
+  .bm-overlay {
+    background: rgba(0, 0, 0, 0.3);
+  }
+}

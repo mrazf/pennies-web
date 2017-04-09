@@ -13,7 +13,9 @@ class Picker extends Component {
       <div className='picker btn-group-vertical'>
         {
           moment.months().map((m, i) => {
-            const classes = classnames('btn btn-secondary text-left', {active: selectedMonth === i})
+            const isSelectedMonth = selectedMonth === i
+            console.log(isSelectedMonth)
+            const classes = classnames('btn btn-secondary text-left', {active: isSelectedMonth, collapse: !!isSelectedMonth})
 
             return (
               <button
