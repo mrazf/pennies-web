@@ -27,20 +27,20 @@ export const fetchTransactions = (token, selectedMonthNumber) => {
   }
 }
 
-export const requestCategories = () => {
-  return { type: 'REQUEST_CATEGORIES' }
+export const requestUserData = () => {
+  return { type: 'REQUEST_USER_DATA' }
 }
 
-export const receiveCategories = (categories) => {
-  return { type: 'RECEIVE_CATEGORIES', categories }
+export const receiveUserData = data => {
+  return { type: 'RECEIVE_USER_DATA', data }
 }
 
-export const fetchCategories = uid => {
+export const fetchUserData = uid => {
   return dispatch => {
-    dispatch(requestCategories())
+    dispatch(requestUserData())
 
-    return database.ref(`/users/${uid}/categories`).once('value')
-      .then(snapshot => dispatch(receiveCategories(snapshot.val())))
+    return database.ref(`/users/${uid}`).once('value')
+      .then(snapshot => dispatch(receiveUserData(snapshot.val())))
   }
 }
 
@@ -74,9 +74,9 @@ export const userSetup = user => {
         const { token, user } = getState()
 
         const transactions = dispatch(fetchTransactions(token.value, 2))
-        const categories = dispatch(fetchCategories(user.data.uid))
+        const userData = dispatch(fetchUserData(user.data.uid))
 
-        return Promise.all([ transactions, categories ])
+        return Promise.all([ transactions, userData ])
       })
       .then(() => dispatch(sucessfullUserSetup()))
   }

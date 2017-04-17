@@ -10,24 +10,28 @@ class Picker extends Component {
     const { selectedMonth, changeMonth } = this.props
 
     return (
-      <div className='time-range-picker btn-group-vertical'>
-        {
-          moment.months().map((m, i) => {
-            const isSelectedMonth = selectedMonth === i
-            console.log(isSelectedMonth)
-            const classes = classnames('btn btn-secondary text-left', {active: isSelectedMonth, collapse: !!isSelectedMonth})
+      <div className='time-range-picker container'>
+        <div className='row justify-content-center'>
+          <div className='btn-group'>
+            <button type='button' className='btn btn-secondary'>2017</button>
+            {
+              moment.monthsShort().map((m, i) => {
+                const isSelectedMonth = selectedMonth === i
+                const classes = classnames('btn btn-secondary text-left', {active: isSelectedMonth, 'hidden-sm-down': !isSelectedMonth})
 
-            return (
-              <button
-                type='button'
-                onClick={() => changeMonth(i)}
-                className={classes}
-                key={i}>
-                {m}
-              </button>
-            )
-          })
-        }
+                return (
+                  <button
+                    type='button'
+                    className={classes}
+                    onClick={() => changeMonth(i)}
+                    key={i}>
+                    {m}
+                  </button>
+                )
+              })
+            }
+          </div>
+        </div>
       </div>
     )
   }
@@ -41,6 +45,4 @@ const mapDispatchToProps = dispatch => {
   return { changeMonth: monthNumber => dispatch(changeMonth(monthNumber)) }
 }
 
-const PickerContainer = connect(mapStateToProps, mapDispatchToProps)(Picker)
-
-export default PickerContainer
+export default connect(mapStateToProps, mapDispatchToProps)(Picker)

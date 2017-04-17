@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import Picker from '../time-range-picker/picker'
 import Setup from './setup'
 import './exporter.scss'
 
@@ -11,6 +12,12 @@ class Exporter extends Component {
     this.cancelPicking = () => this.setState({ picking: false })
   }
 
+  content () {
+    return (
+      <Picker />
+    )
+  }
+
   render () {
     return (
       <div className='exporter container-fluid'>
@@ -18,7 +25,7 @@ class Exporter extends Component {
           <div className='col-xl-8 offset-xl-2'>
             {
               this.props.setup
-                ? <p>already setup</p>
+                ? this.content()
                 : <Setup />
             }
           </div>

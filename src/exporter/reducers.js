@@ -4,7 +4,10 @@ const initialState = {
 
 const exporter = (state = initialState, action) => {
   switch (action.type) {
-    case 'SAVE_SHEET_ID_SUCCESS': return { ...state, setup: true }
+    case 'RECEIVE_USER_DATA':
+      return action.data.exporter ? { ...action.data.exporter, setup: true } : state
+    case 'SAVE_SHEET_ID_SUCCESS':
+      return { ...state, setup: true }
     default: return state
   }
 }
