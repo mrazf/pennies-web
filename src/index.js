@@ -11,6 +11,7 @@ import Dashboard from './dashboard/dashboard'
 import DashboardHome from './dashboard/home/home'
 import Transactions from './transactions/transactions'
 import Categories from './categories/categories'
+import Exporter from './exporter/exporter'
 
 firebase.initializeApp({
   apiKey: 'AIzaSyCUc586MZvUba-no3aB-tt2mr7CLROVle8',
@@ -31,6 +32,7 @@ render((
           <Route path='/dashboard' component={DashboardHome} />
           <Route path='/dashboard/transactions' component={Transactions} />
           <Route path='/dashboard/categories' component={Categories} />
+          <Route path='/dashboard/exporter' component={Exporter} />
         </Route>
       </Route>
     </Router>

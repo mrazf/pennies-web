@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router'
 import { slide as SideMenu } from 'react-burger-menu'
 import './menu.scss'
 
@@ -21,10 +22,12 @@ export default class Menu extends Component {
             New Transactions
             <span className='badge badge-warning'>9</span>
           </p>
-          <p>
-            Newly Exported
+          <div>
+            <Link to='/dashboard/exporter'>
+              Newly Exported
+            </Link>
             <span className='badge badge-warning'>8</span>
-          </p>
+          </div>
         </SideMenu>
       </div>
     )

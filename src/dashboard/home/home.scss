@@ -3,9 +3,4 @@
 .dashboard-home {
   margin-left: 1rem;
   margin-right: 1rem;
-
-  @include media-breakpoint-up(xl) {
-    margin-left: 15rem;
-    margin-right: 15rem;
-  }
 }

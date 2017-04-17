@@ -1,0 +1,33 @@
+.category-overview {
+  border: 1px solid #e6e6e6;
+
+  .header {
+    padding: 0.5em 1em 0.5em 1em;
+    border-bottom: 1px solid #e6e6e6;
+
+    p {
+      margin-bottom: 0;
+    }
+  }
+
+  .spending {
+    padding: 0.5em 1em 0.5em 1em;
+
+    p {
+      margin-bottom: 0;
+    }
+
+    .percentage {
+      content: "";
+      display: inline-block;
+      background-color: #3d9970;
+    }
+
+    @for $i from 1 through 100 {
+      .percentage-#{$i} {
+        $value: ($i * 1%);
+        width: $value;
+      }
+    }
+  }
+}

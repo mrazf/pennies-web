@@ -10,7 +10,7 @@ class Picker extends Component {
     const { selectedMonth, changeMonth } = this.props
 
     return (
-      <div className='picker btn-group-vertical'>
+      <div className='time-range-picker btn-group-vertical'>
         {
           moment.months().map((m, i) => {
             const isSelectedMonth = selectedMonth === i

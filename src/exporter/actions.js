@@ -1,0 +1,20 @@
+import { database } from '../index'
+
+export const saveSheetIdRequest = id => {
+  return { type: 'SAVE_SHEET_ID_REQUEST', id }
+}
+
+export const saveSheetIdSuccess = () => {
+  return { type: 'SAVE_SHEET_ID_SUCCESS' }
+}
+
+export const addExportSheet = id => {
+  return (dispatch, getState) => {
+    dispatch(saveSheetIdRequest())
+
+    const uid = getState().user.data.uid
+
+    return database.ref(`/users/${uid}/exporter`).set({ sheet: id })
+      .then(() => dispatch(saveSheetIdSuccess()))
+  }
+}
