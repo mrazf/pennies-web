@@ -1,35 +1,47 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import Picker from '../time-range-picker/picker'
+import loadScript from 'load-script'
 import Setup from './setup'
+import YearView from './year-view'
 import './exporter.scss'
+
+const GOOGLE_SDK_URL = 'https://apis.google.com/js/api.js'
 
 class Exporter extends Component {
   constructor (props) {
     super(props)
 
+    this.state = { loading: true }
+
+    this.loaded = () => this.setState({ loading: false })
     this.startPicking = () => this.setState({ picking: true })
     this.cancelPicking = () => this.setState({ picking: false })
   }
 
-  content () {
+  loadingSpinner () {
     return (
-      <Picker />
+      <div className='container loading-spinner'>
+        <div className='row justify-content-center'>
+          <strong className='spinner' role='progressbar'>Loading…</strong>
+        </div>
+      </div>
     )
+  }
+
+  content () {
+    return this.props.setup ? <YearView {...this.props} /> : <Setup />
+  }
+
+  componentDidMount () {
+    loadScript(GOOGLE_SDK_URL, this.loaded)
   }
 
   render () {
     return (
-      <div className='exporter container-fluid'>
-        <div className='row pt-4'>
-          <div className='col-xl-8 offset-xl-2'>
-            {
-              this.props.setup
-                ? this.content()
-                : <Setup />
-            }
-          </div>
-        </div>
+      <div className='exporter'>
+        {
+          this.state.loading ? this.loadingSpinner() : this.content()
+        }
       </div>
     )
   }

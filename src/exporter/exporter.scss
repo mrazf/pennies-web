@@ -1,5 +1,36 @@
 .exporter {
+  height: 100%;
+
   .start-button {
     display: block;
+  }
+
+  .loading-spinner {
+    height: 60%;
+    margin-top: 7%;
+
+    .spinner {
+      display: inline-block;
+      width: 1em;
+      height: 1em;
+      font-size: 90px;
+      color: #506699;
+      border: .08em solid;
+      border-color: transparent currentColor currentColor;
+      vertical-align: middle;
+      overflow: hidden;
+      text-indent: 100%;
+      border-radius: 100%;
+      animation: spin 1s infinite linear;
+      opacity: 1;
+      visibility: visible;
+      transition: opacity 1s ease,visibility 1s ease;
+    }
+
+    @keyframes spin {
+      100% {
+        transform: rotate(1turn);
+      }
+    }
   }
 }
