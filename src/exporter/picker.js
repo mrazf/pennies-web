@@ -58,7 +58,6 @@ class Exporter extends Component {
   }
 
   createPicker () {
-    console.log('createPicker', this.state.token)
     const picker = new window.google.picker.PickerBuilder()
       .addView(window.google.picker.ViewId.SPREADSHEETS)
       .setOAuthToken(this.state.token)

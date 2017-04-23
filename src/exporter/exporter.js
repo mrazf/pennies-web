@@ -1,11 +1,9 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import loadScript from 'load-script'
+import gapiSetup from './gapi-setup'
 import Setup from './setup'
-import YearView from './year-view'
+import YearView from './year-view/year-view'
 import './exporter.scss'
-
-const GOOGLE_SDK_URL = 'https://apis.google.com/js/api.js'
 
 class Exporter extends Component {
   constructor (props) {
@@ -14,15 +12,13 @@ class Exporter extends Component {
     this.state = { loading: true }
 
     this.loaded = () => this.setState({ loading: false })
-    this.startPicking = () => this.setState({ picking: true })
-    this.cancelPicking = () => this.setState({ picking: false })
   }
 
   loadingSpinner () {
     return (
       <div className='container loading-spinner'>
         <div className='row justify-content-center'>
-          <strong className='spinner' role='progressbar'>Loading…</strong>
+          <strong className='spinner' role='progressbar'>Loading Google</strong>
         </div>
       </div>
     )
@@ -33,7 +29,8 @@ class Exporter extends Component {
   }
 
   componentDidMount () {
-    loadScript(GOOGLE_SDK_URL, this.loaded)
+    gapiSetup()
+      .then(this.loaded)
   }
 
   render () {
