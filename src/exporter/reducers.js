@@ -1,5 +1,5 @@
 const initialState = {
-  setup: false, sheet: null
+  setup: false, spreadsheetId: null
 }
 
 const exporter = (state = initialState, action) => {

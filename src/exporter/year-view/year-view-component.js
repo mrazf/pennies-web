@@ -4,7 +4,7 @@ import './year-view.scss'
 
 class YearViewComponent extends Component {
   render () {
-    const { name, id } = this.props.spreadsheet
+    const { spreadsheetId, properties: { title } } = this.props.spreadsheet
 
     return (
       <div className='year-view container-fluid offset-xl-2'>
@@ -25,7 +25,7 @@ class YearViewComponent extends Component {
         </div>
         <div className='row'>
           <div className='col'>
-            <p>Your transactions are being sent to "<a href='#'>{ name }</a>". Edit them below</p>
+            <p>Your transactions are being sent to "<a href='#'>{ title }</a>". Edit them below</p>
           </div>
         </div>
         <div className='row pt-3'>
@@ -34,7 +34,7 @@ class YearViewComponent extends Component {
               <tbody>
                 {
                   this.props.months.map((m, i) => {
-                    return <Month spreadsheetId={id} month={m} index={i} key={i} />
+                    return <Month spreadsheetId={spreadsheetId} month={m} index={i} key={i} />
                   })
                 }
               </tbody>

@@ -38,8 +38,8 @@ class Exporter extends Component {
 
   getToken () {
     window.gapi.auth.authorize({
-      'client_id': '270478801405-mvmso9v4isg8ri0klukmp9ov7501he8m.apps.googleusercontent.com',
-      'scope': ['https://www.googleapis.com/auth/drive.readonly'],
+      'client_id': '270478801405-ebtt402hdm8rn9idn12gu8k1f5lsbjlg.apps.googleusercontent.com',
+      'scope': ['https://www.googleapis.com/auth/drive', 'https://www.googleapis.com/auth/spreadsheets'],
       'immediate': false
     },
     this.tokenLoaded)
@@ -59,7 +59,7 @@ class Exporter extends Component {
 
   createPicker () {
     const picker = new window.google.picker.PickerBuilder()
-      .addView(window.google.picker.ViewId.SPREADSHEETS)
+      .addView(window.google.picker.ViewId.DOCS)
       .setOAuthToken(this.state.token)
       .setDeveloperKey('AIzaSyCUc586MZvUba-no3aB-tt2mr7CLROVle8')
       .setCallback(this.pickerResult)

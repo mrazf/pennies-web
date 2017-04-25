@@ -17,14 +17,14 @@ class Month extends Component {
   createSheet () {
     const api = window.gapi.client.sheets.spreadsheets
     const { spreadsheetId, index, month } = this.props
-    const sheetName = month.name
+    const title = month.name
 
     console.log(api.batchUpdate({
       spreadsheetId,
       requests: [
         {
           addSheet: {
-            title: sheetName, index
+            properties: { title, index }
           }
         }
       ]

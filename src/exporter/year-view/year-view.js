@@ -41,7 +41,7 @@ class YearView extends Component {
 
   componentDidMount () {
     window.gapi.client.sheets.spreadsheets.get({
-      spreadsheetId: this.props.sheet.id,
+      spreadsheetId: this.props.spreadsheetId,
       includeGridData: true
     })
     .then(({ result }) => {
@@ -56,7 +56,7 @@ class YearView extends Component {
     return (
       this.state.loading
         ? this.loadingSpinner()
-        : <YearViewComponent spreadsheet={this.props.sheet} months={months} recreate={this.recreate} />
+        : <YearViewComponent spreadsheet={this.state.sheet} months={months} recreate={this.recreate} />
     )
   }
 }

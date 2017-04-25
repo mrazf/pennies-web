@@ -15,7 +15,7 @@ const loadApiScript = () => {
 
 const loadLibs = () => {
   return new Promise((resolve) => {
-    window.gapi.load('client:auth2', resolve)
+    window.gapi.load('client:auth2:picker', resolve)
   })
 }
 
@@ -24,8 +24,8 @@ const initClient = () => {
     window.gapi.client.init({
       apiKey: 'AIzaSyCUc586MZvUba-no3aB-tt2mr7CLROVle8',
       discoveryDocs: DISCOVERY_DOCS,
-      clientId: '270478801405-mvmso9v4isg8ri0klukmp9ov7501he8m.apps.googleusercontent.com',
-      scope: 'https://www.googleapis.com/auth/drive.readonly'
+      clientId: '270478801405-ebtt402hdm8rn9idn12gu8k1f5lsbjlg.apps.googleusercontent.com',
+      scope: 'https://www.googleapis.com/auth/spreadsheets'
     }).then(resolve)
   })
 }
