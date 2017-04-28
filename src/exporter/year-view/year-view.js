@@ -29,6 +29,13 @@ class YearView extends Component {
     console.log('pop')
   }
 
+  reSetup () {
+    window.gapi.auth2.getAuthInstance().currentUser.get().grantOfflineAccess()
+      .then(resp => {
+        console.log(resp)
+      })
+  }
+
   loadingSpinner () {
     return (
       <div className='container loading-spinner'>
@@ -56,7 +63,7 @@ class YearView extends Component {
     return (
       this.state.loading
         ? this.loadingSpinner()
-        : <YearViewComponent spreadsheet={this.state.sheet} months={months} recreate={this.recreate} />
+        : <YearViewComponent spreadsheet={this.state.sheet} months={months} reSetup={this.reSetup} recreate={this.recreate} />
     )
   }
 }

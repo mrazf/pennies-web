@@ -25,7 +25,7 @@ const initClient = () => {
       apiKey: 'AIzaSyCUc586MZvUba-no3aB-tt2mr7CLROVle8',
       discoveryDocs: DISCOVERY_DOCS,
       clientId: '270478801405-ebtt402hdm8rn9idn12gu8k1f5lsbjlg.apps.googleusercontent.com',
-      scope: 'https://www.googleapis.com/auth/spreadsheets'
+      scope: 'https://www.googleapis.com/auth/drive.readonly'
     }).then(resolve)
   })
 }

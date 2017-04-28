@@ -17,6 +17,9 @@ class YearViewComponent extends Component {
           <div className='col-lg-1'>
             <button type='button' className='btn btn-danger' onClick={this.props.recreate}>Recreate</button>
           </div>
+          <div className='col-lg-1'>
+            <button type='button' className='btn btn-danger' onClick={this.props.reSetup}>re-setup</button>
+          </div>
         </div>
         <div className='row pt-3'>
           <div className='col'>
