@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
 import moment from 'moment'
 import YearViewComponent from './year-view-component'
 
@@ -68,4 +69,8 @@ class YearView extends Component {
   }
 }
 
-export default YearView
+const mapStateToProps = state => {
+  return { ...state.exporter }
+}
+
+export default connect(mapStateToProps)(YearView)

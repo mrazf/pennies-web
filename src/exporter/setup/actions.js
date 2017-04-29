@@ -1,4 +1,4 @@
-import { database } from '../index'
+import { database } from '../../index'
 
 export const saveSheetIdRequest = id => {
   return { type: 'SAVE_SHEET_ID_REQUEST', id }

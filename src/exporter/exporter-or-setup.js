@@ -2,13 +2,16 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import YearView from './year-view/year-view'
 import gapiSetup from './gapi-setup'
-import Setup from './setup'
+import Setup from './setup/setup'
+import { LOADING, NEW_EXPORTER, EXPORTER } from './statuses'
 
 class ExporterOrSetup extends Component {
   constructor (props) {
     super(props)
 
-    this.state = { loading: true, sheet: null }
+    this.state = { status: LOADING, sheet: null }
+
+    this.loaded = this.loaded.bind(this)
   }
 
   loadingSpinner () {
@@ -21,36 +24,29 @@ class ExporterOrSetup extends Component {
     )
   }
 
-  content () {
-    return this.props.setup ? <YearView {...this.props} /> : <Setup />
-  }
+  loaded () {
+    const exporterOrSetup = this.props.spreadsheetId ? EXPORTER : NEW_EXPORTER
 
-  spreadsheetOrNull () {
-    const { spreadsheetId } = this.props
-
-    return new Promise((resolve) => {
-      if (!spreadsheetId) return resolve()
-
-      window.gapi.client.sheets.spreadsheets.get({
-        spreadsheetId,
-        includeGridData: true
-      }).then(({ result }) => {
-        this.setState({ loading: false, sheet: result })
-      })
-    })
+    this.setState({ status: exporterOrSetup })
   }
 
   componentDidMount () {
     gapiSetup()
-      .then(this.spreadsheetOrNull)
+      .then(this.loaded)
+  }
+
+  status () {
+    switch (this.state.status) {
+      case LOADING: return this.loadingSpinner()
+      case NEW_EXPORTER: return <Setup />
+      case EXPORTER: return <YearView />
+    }
   }
 
   render () {
     return (
       <div className='exporter'>
-        {
-          this.state.loading ? this.loadingSpinner() : this.content()
-        }
+        { this.status() }
       </div>
     )
   }
