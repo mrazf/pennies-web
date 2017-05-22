@@ -5,7 +5,7 @@
   "repository": {},
   "license": "MIT",
   "scripts": {
-    "dev": "API_HOST=\"'https://quiet-reaches-46541.herokuapp.com'\" webpack-dev-server",
+    "dev": "API_HOST=\"'https://rampton.herokuapp.com'\" webpack-dev-server",
     "dev:local": "API_HOST=\"'http://localhost:9001'\" webpack-dev-server",
     "dev:stub": "API_HOST=\"'http://localhost:8080/stubs'\" webpack-dev-server",
     "lint": "standard src/**/*.js",

@@ -1,4 +1,7 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
+
+const apiHost = __API_HOST__
 
 const createCopy = month => {
   switch (month.type) {
@@ -12,6 +15,7 @@ class Month extends Component {
     super(props)
 
     this.createSheet = this.createSheet.bind(this)
+    this.refresh = this.refresh.bind(this)
   }
 
   createSheet () {
@@ -42,6 +46,13 @@ class Month extends Component {
     }
   }
 
+  refresh () {
+    const headers = { 'Authorization': `Bearer: ${this.props.token}` }
+
+    return window.fetch(`${apiHost}/rpc`, { headers })
+      .then(response => response.json())
+  }
+
   render () {
     const { index, month } = this.props
 
@@ -52,6 +63,9 @@ class Month extends Component {
           {
             month.buttons.map((b, i) => this.createButton(b, i))
           }
+          <span onClick={this.refresh} className='create-sheet mr-3'>
+            <i className='fa fa-plus pr-2' aria-hidden='true' />Refresh
+          </span>
         </td>
         { createCopy(month) }
       </tr>
@@ -59,4 +73,8 @@ class Month extends Component {
   }
 }
 
-export default Month
+const mapStateToProps = state => {
+  return { token: state.token.value }
+}
+
+export default connect(mapStateToProps)(Month)

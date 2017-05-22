@@ -15,7 +15,7 @@ export const fetchTransactions = (token, selectedMonthNumber) => {
   return (dispatch) => {
     dispatch(requestTransactions())
 
-    const selectedDate = moment.utc().month(selectedMonthNumber - 1)
+    const selectedDate = moment.utc().month(selectedMonthNumber)
 
     const from = selectedDate.startOf('month').utc().format()
     const to = selectedDate.endOf('month').utc().format()
@@ -71,9 +71,9 @@ export const userSetup = user => {
     return user.getToken(true)
       .then(token => dispatch(receiveToken(token)))
       .then(() => {
-        const { token, user } = getState()
+        const { token, user, selectedMonth } = getState()
 
-        const transactions = dispatch(fetchTransactions(token.value, 2))
+        const transactions = dispatch(fetchTransactions(token.value, selectedMonth.number))
         const userData = dispatch(fetchUserData(user.data.uid))
 
         return Promise.all([ transactions, userData ])
