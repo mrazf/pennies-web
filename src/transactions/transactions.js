@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import moment from 'moment'
 import Picker from '../time-range-picker/picker'
-import Categorize from './categorize/form'
 import { updateCategory } from './actions'
 import './transactions.scss'
 
@@ -13,38 +12,31 @@ class Transactions extends Component {
 
     return (
       <div className='transactions container-fluid'>
-        <div className='row'>
-          <div className='col-1 offset-1'>
-            <Picker />
-          </div>
-          <div className='col-8'>
+        <div className='transactions__picker row'>
+          <Picker />
+        </div>
+        <div className='transactions__table row'>
+          <div className='col-9'>
             <table className='table table-sm'>
               <thead>
                 <tr>
                   <th>Date & Time</th>
                   <th>Category</th>
                   <th>Amount</th>
-                  <th>Description</th>
+                  <th>Merchant</th>
                   <th>Monzo Category</th>
                 </tr>
               </thead>
               <tbody>
                 {
                   transactions.map(t => {
-                    const updateThisCategory = categoryId => this.props.updateCategory(t, categoryId)
-                    const categoryId = t.metadata.category
-
                     return (
                       <tr key={t.id}>
-                        <td>{moment(t.created).format('ddd Do, HH:mm:ss')}</td>
-                        <td>
-                          {
-                            categoryId ? this.props.categories[categoryId] : <Categorize updateCategory={updateThisCategory} />
-                          }
-                        </td>
-                        <td>{t.amount}</td>
-                        <td>{t.description}</td>
-                        <td>{t.category}</td>
+                        <td>{moment(t.dateTime).format('ddd Do, HH:mm:ss')}</td>
+                        <td>Not Set</td>
+                        <td>{`£${t.amount}`}</td>
+                        <td>{t.merchant}</td>
+                        <td>{t.monzoCategory}</td>
                       </tr>
                     )
                   })
