@@ -21,7 +21,7 @@ export const fetchTransactions = (token, selectedMonthNumber) => {
     const to = selectedDate.endOf('month').utc().format()
     const headers = { 'Authorization': `Bearer: ${token}` }
 
-    return window.fetch(`${apiHost}/transactions?from=${from}&to=${to}`, { headers })
+    return window.fetch(`${apiHost}/transactions.json?from=${from}&to=${to}`, { headers })
       .then(response => response.json())
       .then(json => dispatch(receiveTransactions(json)))
   }

@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import moment from 'moment'
 import Picker from '../time-range-picker/picker'
 import { updateCategory } from './actions'
+import TransactionRow from './transaction-row'
 import './transactions.scss'
 
 class Transactions extends Component {
@@ -15,34 +15,26 @@ class Transactions extends Component {
         <div className='transactions__picker row'>
           <Picker />
         </div>
-        <div className='transactions__table row'>
-          <div className='col-9'>
-            <table className='table table-sm'>
-              <thead>
-                <tr>
-                  <th>Date & Time</th>
-                  <th>Category</th>
-                  <th>Amount</th>
-                  <th>Merchant</th>
-                  <th>Monzo Category</th>
-                </tr>
-              </thead>
-              <tbody>
-                {
-                  transactions.map(t => {
-                    return (
-                      <tr key={t.id}>
-                        <td>{moment(t.dateTime).format('ddd Do, HH:mm:ss')}</td>
-                        <td>Not Set</td>
-                        <td>{`£${t.amount}`}</td>
-                        <td>{t.merchant}</td>
-                        <td>{t.monzoCategory}</td>
-                      </tr>
-                    )
-                  })
-                }
-              </tbody>
-            </table>
+        <div className='row justify-content-center'>
+          <div className='col-7'>
+            <div className='transactions__table'>
+              <table className='table table-sm'>
+                <thead>
+                  <tr>
+                    <th>Date & Time</th>
+                    <th>Category</th>
+                    <th className='amount-header'>Amount</th>
+                    <th>Merchant</th>
+                    <th>Monzo Category</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {
+                    transactions.map(t => <TransactionRow transaction={t} />)
+                  }
+                </tbody>
+              </table>
+            </div>
           </div>
         </div>
       </div>

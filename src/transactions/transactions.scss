@@ -2,10 +2,43 @@
 
 .transactions {
   .transactions__table {
+    .amount-header {
+      padding-left: 2%
+    }
 
-    @include media-breakpoint-up(md) {
-      padding-left: 20em;
-      padding-right: 20em;
+    .transaction-row {
+      .transaction-row__date-time {
+        width: 20%;
+      }
+
+      .transaction-row__category {
+        width: 15%;
+        -webkit-transition: all .5s;
+        -moz-transition: all .5s;
+        transition: all .5s;
+        transition-timing-function: ease-in-out;
+        -moz-transition-timing-function: ease-in-out;
+        -webkit-transition-timing-function: ease-in-out;
+      }
+
+      .transaction-row__amount {
+        padding-left: 2%;
+        width: 10%;
+      }
+
+      .transaction-row__merchant {
+        width: 30%;
+        max-width: 0;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+
+      &.expanded-category {
+        .transaction-row__category {
+          width: 25%;
+        }
+      }
     }
   }
 
