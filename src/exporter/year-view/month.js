@@ -54,7 +54,7 @@ class Month extends Component {
   }
 
   render () {
-    const { index, month } = this.props
+    const { month } = this.props
 
     return (
       <tr>
