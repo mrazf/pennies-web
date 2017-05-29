@@ -26,6 +26,9 @@ module.exports = {
   devtool: 'eval-source-map',
   devServer: {
     publicPath: '/',
-    historyApiFallback: true
+    historyApiFallback: true,
+    staticOptions: {
+      extensions: ['json', '']
+    }
   }
 }

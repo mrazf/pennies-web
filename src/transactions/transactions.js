@@ -2,10 +2,18 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import Picker from '../time-range-picker/picker'
 import { updateCategory } from './actions'
-import TransactionRow from './transaction-row'
+import TransactionContainer from './transaction/container'
 import './transactions.scss'
 
 class Transactions extends Component {
+  constructor (props) {
+    super(props)
+
+    this.state = { expanded: false }
+
+    this.toggleExpansion = () => this.setState({ ...this.state, expanded: !this.state.expanded })
+  }
+
   render () {
     const ids = Object.keys(this.props.transactions)
     const transactions = ids.map(id => this.props.transactions[id])
@@ -30,7 +38,14 @@ class Transactions extends Component {
                 </thead>
                 <tbody>
                   {
-                    transactions.map(t => <TransactionRow transaction={t} />)
+                    transactions.map(t => {
+                      return (
+                        <TransactionContainer
+                          transaction={t}
+                          toggleExpansion={this.toggleExpansion}
+                        />
+                      )
+                    })
                   }
                 </tbody>
               </table>
