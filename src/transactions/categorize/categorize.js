@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import Select from 'react-select'
+import { Creatable } from 'react-select'
 import 'react-select/dist/react-select.css'
+import { addNewCategory } from '../../categories/actions'
 
 const notSet = { value: 'not-set', label: 'Not Set' }
 
@@ -24,15 +25,28 @@ class Categorize extends Component {
     this.onChange = chosen => this.setState({ value: chosen.value })
   }
 
+  createableOptions () {
+    return {
+      onNewOptionClick: ({ label, labelKey, valueKey }) => {
+        console.log('im being created')
+        this.props.addNewCategory(label)
+        return { value: 'pop', label }
+      },
+      promptTextCreator: option => `Create category "${option}"`
+    }
+  }
+
   render () {
     return (
-      <Select
+      <Creatable
         name='form-field-name'
         value={this.state.value}
+        isLoading={this.state.loading}
         options={categoriesToOptions(this.props.categories)}
         onChange={this.onChange}
         onBlur={this.props.toggleExpansion}
         onFocus={this.props.toggleExpansion}
+        {...this.createableOptions()}
       />
     )
   }
@@ -42,4 +56,8 @@ const mapStateToProps = state => {
   return { categories: state.categories.byId }
 }
 
-export default connect(mapStateToProps)(Categorize)
+const mapDispatchToProps = dispatch => {
+  return { addNewCategory: name => dispatch(addNewCategory(name)) }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Categorize)
