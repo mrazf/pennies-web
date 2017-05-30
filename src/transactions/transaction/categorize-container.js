@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import Categorize from './categorize'
+import { Creatable } from 'react-select'
 
 const NOT_SET = { value: 'not-set', label: 'Not Set' }
 
@@ -17,8 +17,8 @@ class CategorizeContainer extends Component {
     super(props)
 
     const value = this.props.categoryId || NOT_SET.value
+    const disabled = this.props.disabled || false
     const loading = false
-    const disabled = false
 
     this.state = { value, loading, disabled }
 
@@ -43,16 +43,28 @@ class CategorizeContainer extends Component {
     })
   }
 
+  createableOptions () {
+    return {
+      onNewOptionClick: ({ label, labelKey, valueKey }) => {
+        this.newCategory(label)
+      },
+      promptTextCreator: option => `Create category "${option}"`
+    }
+  }
+
   render () {
     return (
-      <Categorize
+      <Creatable
+        name='form-field-name'
+        clearable={false}
         value={this.state.value}
-        options={this.props.categories}
-        loading={this.state.loading}
+        isLoading={this.state.loading}
         disabled={this.state.disabled}
+        options={this.props.categories}
         onChange={this.onChange}
-        newCategory={this.newCategory}
-        toggleExpansion={this.props.toggleExpansion}
+        onBlur={this.props.onBlur}
+        onFocus={this.props.onFocus}
+        {...this.createableOptions()}
       />
     )
   }

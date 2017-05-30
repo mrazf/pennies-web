@@ -3,10 +3,12 @@ import { shallow } from 'enzyme'
 import { TransactionContainer } from './transaction-container'
 
 describe('Transaction Container', () => {
-  it('is disabled if it\'s id is in the in flight requests', () => {
-    const container = shallow(<TransactionContainer />)
-    const props = container.find('TransactionComponent').props()
+  it('has a disabled category if it is updating', () => {
+    const transaction = { categoryId: 'drinks-out' }
 
-    expect(props.loading).toBe(true)
+    const container = shallow(<TransactionContainer transaction={transaction} updating />)
+    const props = container.find('TransactionComponent').props().categorizeContainer.props
+
+    expect(props.disabled).toBe(true)
   })
 })

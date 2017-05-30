@@ -1,5 +1,5 @@
 {
-  "testMatch": ["**/*-test.js"],
+  "testMatch": ["src/../**/*-test.js"],
   "globals": {
     "__API_HOST__": "pop"
   }

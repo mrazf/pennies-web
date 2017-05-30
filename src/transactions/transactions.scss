@@ -33,11 +33,11 @@
         text-overflow: ellipsis;
         white-space: nowrap;
       }
+    }
 
-      &.expanded-category {
-        .transaction-row__category {
-          width: 25%;
-        }
+    &.expanded {
+      .transaction-row__category {
+        width: 25%;
       }
     }
   }

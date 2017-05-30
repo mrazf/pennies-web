@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { updateCategory } from '../actions'
-import TransactionComponent from './component'
+import TransactionComponent from './transaction-component'
+import CategorizeContainer from './categorize-container'
 
 export class TransactionContainer extends Component {
   constructor (props) {
@@ -16,12 +17,23 @@ export class TransactionContainer extends Component {
     }
   }
 
+  categorizeContainer () {
+    return (
+      <CategorizeContainer
+        onBlur={this.props.contract}
+        onFocus={this.props.expand}
+        disabled={Boolean(this.props.updating)}
+        categoryId={this.props.transaction.categoryId}
+        updateCategory={this.updateCategory()}
+      />
+    )
+  }
+
   render () {
     return (
       <TransactionComponent
+        categorizeContainer={this.categorizeContainer()}
         transaction={this.props.transaction}
-        updateCategory={this.updateCategory()}
-        toggleExpansion={this.props.toggleExpansion}
       />
     )
   }

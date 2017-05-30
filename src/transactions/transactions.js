@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import classnames from 'classnames'
 import Picker from '../time-range-picker/picker'
 import { updateCategory } from './actions'
 import TransactionContainer from './transaction/transaction-container'
@@ -11,12 +12,14 @@ class Transactions extends Component {
 
     this.state = { expanded: false }
 
-    this.toggleExpansion = () => this.setState({ ...this.state, expanded: !this.state.expanded })
+    this.expand = () => this.setState({ expanded: true })
+    this.contract = () => this.setState({ expanded: false })
   }
 
   render () {
     const ids = Object.keys(this.props.transactions)
     const transactions = ids.map(id => this.props.transactions[id])
+    const tableClasses = classnames('transactions__table', { expanded: this.state.expanded })
 
     return (
       <div className='transactions container-fluid'>
@@ -25,7 +28,7 @@ class Transactions extends Component {
         </div>
         <div className='row justify-content-center'>
           <div className='col-7'>
-            <div className='transactions__table'>
+            <div className={tableClasses}>
               <table className='table table-sm'>
                 <thead>
                   <tr>
@@ -42,7 +45,8 @@ class Transactions extends Component {
                       return (
                         <TransactionContainer
                           transaction={t}
-                          toggleExpansion={this.toggleExpansion}
+                          expand={this.expand}
+                          contract={this.contract}
                         />
                       )
                     })
