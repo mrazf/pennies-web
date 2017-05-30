@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import { updateCategory } from '../actions'
 import TransactionComponent from './component'
 
-class TransactionContainer extends Component {
+export class TransactionContainer extends Component {
   constructor (props) {
     super(props)
 

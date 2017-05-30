@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import Picker from '../time-range-picker/picker'
 import { updateCategory } from './actions'
-import TransactionContainer from './transaction/container'
+import TransactionContainer from './transaction/transaction-container'
 import './transactions.scss'
 
 class Transactions extends Component {
