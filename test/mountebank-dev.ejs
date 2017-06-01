@@ -1,0 +1,80 @@
+{
+  "imposters": [
+    {
+      "port": 5555,
+      "protocol": "http",
+      "name": "rampton",
+      "stubs": [
+        {
+          "responses": [
+            {
+              "is": {
+                "statusCode": 204,
+                "headers": {
+                  "Access-Control-Allow-Origin": "*",
+                  "Access-Control-Allow-Headers": "authorization,content-type",
+                  "Access-Control-Request-Method": "GET,HEAD,PUT,PATCH,POST,DELETE"
+                }
+              }
+            },
+            {
+              "is": {
+                "statusCode": 200,
+                "headers": {
+                  "Access-Control-Allow-Origin": "*"
+                },
+                "body": "<%- stringify(filename, '../stubs/transactions-single.json') %>"
+              }
+            }
+          ],
+          "predicates": [
+            {
+              "or": [
+                {
+                  "equals": { "method": "OPTIONS", "path": "/transactions" }
+                },
+                {
+                  "equals": { "method": "GET", "path": "/transactions" }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "responses": [
+            {
+              "is": {
+                "statusCode": 204,
+                "headers": {
+                  "Access-Control-Allow-Origin": "*",
+                  "Access-Control-Allow-Headers": "authorization,content-type",
+                  "Access-Control-Request-Method": "GET,HEAD,PUT,PATCH,POST,DELETE"
+                }
+              }
+            },
+            {
+              "is": {
+                "statusCode": 200,
+                "headers": {
+                  "Access-Control-Allow-Origin": "*"
+                },
+                "body": "<%- stringify(filename, '../stubs/transaction-update.json') %>"
+              },
+              "_behaviors": {
+                "wait": 2000
+              }
+            }
+          ],
+          "predicates":[
+            {
+              "or":[
+                { "matches": { "method": "OPTIONS", "path": "^/transactions/(.+)$" } },
+                { "matches": { "method": "POST", "path": "^/transactions/(.+)$" } }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

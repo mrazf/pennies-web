@@ -16,18 +16,12 @@ class CategorizeContainer extends Component {
   constructor (props) {
     super(props)
 
-    const value = this.props.categoryId || NOT_SET.value
-    const disabled = this.props.disabled || false
-    const loading = false
-
-    this.state = { value, loading, disabled }
-
     this.onChange = this.onChange.bind(this)
     this.newCategory = this.newCategory.bind(this)
   }
 
   onChange (chosen) {
-    this.setState({ ...this.state, disabled: true, loading: true })
+    this.setState({ ...this.state })
 
     this.props.updateCategory(chosen.value)
   }
@@ -53,13 +47,15 @@ class CategorizeContainer extends Component {
   }
 
   render () {
+    const value = this.props.categoryId || NOT_SET.value
+
     return (
       <Creatable
         name='form-field-name'
         clearable={false}
-        value={this.state.value}
-        isLoading={this.state.loading}
-        disabled={this.state.disabled}
+        value={value}
+        isLoading={this.props.disabled}
+        disabled={this.props.disabled}
         options={this.props.categories}
         onChange={this.onChange}
         onBlur={this.props.onBlur}

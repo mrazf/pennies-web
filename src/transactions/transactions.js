@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import * as R from 'ramda'
 import classnames from 'classnames'
 import Picker from '../time-range-picker/picker'
 import { updateCategory } from './actions'
@@ -42,11 +43,15 @@ class Transactions extends Component {
                 <tbody>
                   {
                     transactions.map(t => {
+                      const updating = R.contains(t.id, this.props.updatingTransactions)
+
                       return (
                         <TransactionContainer
+                          updating={updating}
                           transaction={t}
                           expand={this.expand}
                           contract={this.contract}
+                          key={t.id}
                         />
                       )
                     })
@@ -62,7 +67,11 @@ class Transactions extends Component {
 }
 
 const mapStateToProps = state => {
-  return { transactions: state.transactions.byId, categories: state.categories.byId }
+  return {
+    transactions: state.transactions.byId,
+    updatingTransactions: state.transactions.updatingIds,
+    categories: state.categories.byId
+  }
 }
 
 const mapDispatchToProps = dispatch => {

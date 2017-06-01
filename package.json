@@ -5,23 +5,30 @@
   "repository": {},
   "license": "MIT",
   "scripts": {
-    "dev": "API_HOST=\"'https://rampton.herokuapp.com'\" webpack-dev-server",
+    "dev": "webpack-dev-server",
+    "dev:mb": "mb --configfile test/mountebank-dev.ejs",
+    "dev:stub": "API_HOST=\"'http://localhost:5555'\" run-p dev:mb dev",
     "dev:local": "API_HOST=\"'http://localhost:9001'\" webpack-dev-server",
-    "dev:stub": "API_HOST=\"'http://localhost:8080/stubs'\" webpack-dev-server",
     "lint": "standard \"src/**/*.js\"",
     "test": "jest",
     "build": "webpack"
   },
   "precommit": [
-    "lint", "test"
+    "lint",
+    "test"
   ],
   "standard": {
     "globals": [
-      "__API_HOST__", "describe", "expect", "it"
+      "__API_HOST__",
+      "describe",
+      "expect",
+      "it"
     ]
   },
   "jest": {
-    "testMatch": ["**/*-test.js"],
+    "testMatch": [
+      "**/*-test.js"
+    ],
     "globals": {
       "__API_HOST__": "pop"
     }
@@ -62,7 +69,9 @@
     "enzyme": "^2.8.2",
     "html-webpack-plugin": "^2.28.0",
     "jest": "^20.0.4",
+    "mountebank": "^1.11.0",
     "node-sass": "^4.5.0",
+    "npm-run-all": "^4.0.2",
     "pre-commit": "^1.2.2",
     "react-addons-test-utils": "^15.5.1",
     "standard": "^9.0.2",

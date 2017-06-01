@@ -22,8 +22,8 @@ export class TransactionContainer extends Component {
       <CategorizeContainer
         onBlur={this.props.contract}
         onFocus={this.props.expand}
-        disabled={Boolean(this.props.updating)}
-        categoryId={this.props.transaction.categoryId}
+        disabled={this.props.updating}
+        categoryId={this.props.transaction.category}
         updateCategory={this.updateCategory()}
       />
     )

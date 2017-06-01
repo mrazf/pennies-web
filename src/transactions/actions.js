@@ -1,7 +1,7 @@
 const apiHost = __API_HOST__
 
-export const categoryUpdateRequest = () => {
-  return { type: 'CATEGORY_UPDATE_REQUEST' }
+export const categoryUpdateRequest = transaction => {
+  return { type: 'CATEGORY_UPDATE_REQUEST', transaction }
 }
 
 export const categoryUpdateSuccess = transaction => {
@@ -15,7 +15,7 @@ export const categoryUpdateFailure = err => {
 
 export const updateCategory = (transaction, categoryId) => {
   return (dispatch, getState) => {
-    dispatch(categoryUpdateRequest)
+    dispatch(categoryUpdateRequest(transaction))
 
     const token = getState().token.value
     const method = 'POST'

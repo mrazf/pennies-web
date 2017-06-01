@@ -1,0 +1,13 @@
+{
+  "transactions": [
+    {
+      "dateTime": "2017-05-01T16:14:14.077Z",
+      "amount": 13.6,
+      "merchant": "The Original Oak",
+      "category": "",
+      "address": "Otley Road, Leeds LS6 2DG",
+      "monzoCategory": "eating_out",
+      "id": "tx_00009JxxFGieB7EnhTmKxt"
+    }
+  ]
+}
