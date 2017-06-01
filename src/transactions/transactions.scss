@@ -12,6 +12,8 @@
       }
 
       .transaction-row__category {
+        @import "./react-select.scss";
+
         width: 15%;
         -webkit-transition: all .7s;
         -moz-transition: all .7s;
