@@ -1,13 +1,11 @@
 import React, { Component } from 'react'
-import { connect } from 'react-redux'
 import classnames from 'classnames'
 import moment from 'moment'
-import { changeMonth } from './actions'
-import './picker.scss'
+import './time-range.scss'
 
-class Picker extends Component {
+class TimeRange extends Component {
   render () {
-    const { selectedMonth, changeMonth } = this.props
+    const { selectedMonth, monthChange } = this.props
 
     return (
       <div className='time-range-picker container'>
@@ -23,7 +21,7 @@ class Picker extends Component {
                   <button
                     type='button'
                     className={classes}
-                    onClick={() => changeMonth(i)}
+                    onClick={() => monthChange(i)}
                     key={i}>
                     {m}
                   </button>
@@ -37,12 +35,4 @@ class Picker extends Component {
   }
 }
 
-const mapStateToProps = state => {
-  return { selectedMonth: state.selectedMonth.number }
-}
-
-const mapDispatchToProps = dispatch => {
-  return { changeMonth: monthNumber => dispatch(changeMonth(monthNumber)) }
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(Picker)
+export default TimeRange

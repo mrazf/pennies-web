@@ -1,5 +1,9 @@
 const apiHost = __API_HOST__
 
+export const monthChange = month => {
+  return { type: 'TRANSACTIONS_MONTH_CHANGE', month }
+}
+
 export const categoryUpdateRequest = transaction => {
   return { type: 'CATEGORY_UPDATE_REQUEST', transaction }
 }

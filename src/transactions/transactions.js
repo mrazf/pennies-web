@@ -2,9 +2,9 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import * as R from 'ramda'
 import classnames from 'classnames'
-import Picker from '../time-range-picker/picker'
-import { updateCategory } from './actions'
 import TransactionContainer from './transaction/transaction-container'
+import TimeRangeContainer from './time-range-container'
+import { updateCategory } from './actions'
 import './transactions.scss'
 
 class Transactions extends Component {
@@ -25,7 +25,7 @@ class Transactions extends Component {
     return (
       <div className='transactions container-fluid'>
         <div className='transactions__picker row'>
-          <Picker />
+          <TimeRangeContainer />
         </div>
         <div className='row justify-content-center'>
           <div className='col-7'>

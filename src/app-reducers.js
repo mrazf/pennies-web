@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux'
-import * as R from 'ramda'
 import moment from 'moment'
 import categories from './categories/reducers'
 import exporter from './exporter/reducers'
+import transactions from './transactions/reducers'
 
 const initialUserState = {
   data: { apiKey: null }
@@ -22,30 +22,6 @@ const token = (state = { value: null, requested: false, received: false }, actio
       return { ...state, requested: true }
     case 'RECEIVE_TOKEN':
       return { ...state, received: true, value: action.token }
-    default: return state
-  }
-}
-
-const transactions = (state = { allIds: [], byId: [], updatingIds: [], requested: false, received: false }, action) => {
-  switch (action.type) {
-    case 'REQUEST_TRANSACTIONS':
-      return { ...state, requested: true }
-    case 'RECEIVE_TRANSACTIONS':
-      const allIds = action.transactions.map(t => t.id)
-      const byId = action.transactions.reduce((acc, t) => {
-        acc[t.id] = t
-
-        return acc
-      }, {})
-      return { ...state, received: true, byId, allIds }
-    case 'CATEGORY_UPDATE_REQUEST':
-      return { ...state, updatingIds: [ ...state.updatingIds, action.transaction.id ] }
-    case 'CATEGORY_UPDATE_SUCCESS':
-      const updatedId = action.transaction.id
-      const updatedById = { ...state.byId, [updatedId]: action.transaction }
-      const updatingIds = R.without(updatedId, state.updatingIds)
-
-      return { ...state, byId: updatedById, updatingIds }
     default: return state
   }
 }
