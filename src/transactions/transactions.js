@@ -4,7 +4,7 @@ import * as R from 'ramda'
 import classnames from 'classnames'
 import TransactionContainer from './transaction/transaction-container'
 import TimeRangeContainer from './time-range-container'
-import { updateCategory } from './actions'
+import { updateCategory } from './redux-actions'
 import './transactions.scss'
 
 class Transactions extends Component {

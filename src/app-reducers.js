@@ -2,7 +2,7 @@ import { combineReducers } from 'redux'
 import moment from 'moment'
 import categories from './categories/reducers'
 import exporter from './exporter/reducers'
-import transactions from './transactions/reducers'
+import transactions from './transactions/redux-reducers'
 
 const initialUserState = {
   data: { apiKey: null }

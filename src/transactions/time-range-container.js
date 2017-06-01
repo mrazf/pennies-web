@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import TimeRange from '../components/time-range/time-range'
-import { monthChange } from './actions'
+import { monthChange } from './redux-actions'
 
 class TimeRangeContainer extends Component {
   render () {

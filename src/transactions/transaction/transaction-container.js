@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { updateCategory } from '../actions'
+import { updateCategory } from '../redux-actions'
 import TransactionComponent from './transaction-component'
 import CategorizeContainer from './categorize-container'
 
