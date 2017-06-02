@@ -2,19 +2,16 @@
   margin-top: 1em;
   margin-bottom: 2em;
 
-  .btn.active {
-    color: ghostwhite;
-    background-color: #334A80;
-  }
-
-  .btn.active:hover {
-    cursor: pointer;
-    background-color: #1F366B;
-  }
-
   .btn:hover {
-    cursor: hand;
-    color: ghostwhite;
-    background-color: #1F366B;
+    cursor: pointer;
+    color: black;
+    background-color: gainsboro;
+  }
+
+  .btn.active {
+    color: black;
+    cursor: default;
+    font-weight: bold;
+    background-color: white;
   }
 }

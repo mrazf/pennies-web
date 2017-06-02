@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import * as R from 'ramda'
 import classnames from 'classnames'
 import moment from 'moment'
 import './time-range.scss'
@@ -16,12 +17,13 @@ class TimeRange extends Component {
               moment.monthsShort().map((m, i) => {
                 const isSelectedMonth = selectedMonth === i
                 const classes = classnames('btn btn-secondary text-left', {active: isSelectedMonth, 'hidden-sm-down': !isSelectedMonth})
+                const onClick = isSelectedMonth ? R.always : () => monthChange(i)
 
                 return (
                   <button
                     type='button'
                     className={classes}
-                    onClick={() => monthChange(i)}
+                    onClick={() => onClick()}
                     key={i}>
                     {m}
                   </button>
