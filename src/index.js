@@ -21,8 +21,6 @@ firebase.initializeApp({
   messagingSenderId: '270478801405'
 })
 
-export const database = firebase.database()
-
 render((
   <Provider store={configureStore()}>
     <Router history={browserHistory}>

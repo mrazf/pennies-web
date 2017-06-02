@@ -1,5 +1,5 @@
 import moment from 'moment'
-import { database } from '../index'
+import database from '../persistence'
 
 const apiHost = __API_HOST__
 
@@ -11,12 +11,13 @@ export const receiveTransactions = (json) => {
   return { type: 'RECEIVE_TRANSACTIONS', transactions: json.transactions }
 }
 
-export const fetchTransactions = (token, selectedMonthNumber) => {
-  return (dispatch) => {
+export const fetchTransactions = selectedMonthNumber => {
+  return (dispatch, getState) => {
     dispatch(requestTransactions())
 
     const selectedDate = moment.utc().month(selectedMonthNumber)
 
+    const token = getState().token.value
     const from = selectedDate.startOf('month').utc().format()
     const to = selectedDate.endOf('month').utc().format()
     const headers = {

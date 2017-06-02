@@ -9,6 +9,7 @@
     "dev:mb": "mb --configfile test/mountebank-dev.ejs",
     "dev:stub": "API_HOST=\"'http://localhost:5555'\" run-p dev:mb dev",
     "dev:local": "API_HOST=\"'http://localhost:9001'\" webpack-dev-server",
+    "dev:production": "API_HOST=\"'https://rampton.herokuapp.com'\" webpack-dev-server",
     "lint": "standard \"src/**/*.js\"",
     "test": "jest",
     "build": "webpack"
@@ -20,6 +21,7 @@
   "standard": {
     "globals": [
       "__API_HOST__",
+      "jest",
       "describe",
       "expect",
       "it"
@@ -31,6 +33,9 @@
     ],
     "globals": {
       "__API_HOST__": "pop"
+    },
+    "moduleNameMapper": {
+      "\\.(css|scss)$": "<rootDir>/test/jest-file-mock.js"
     }
   },
   "dependencies": {

@@ -1,7 +1,16 @@
+import { fetchTransactions } from '../dashboard/dashboard-actions'
+
 const apiHost = __API_HOST__
 
-export const monthChange = month => {
+const monthChangeSuccess = month => {
   return { type: 'TRANSACTIONS_MONTH_CHANGE', month }
+}
+
+export const monthChange = month => {
+  return dispatch => {
+    return dispatch(fetchTransactions(month))
+      .then(() => dispatch(monthChangeSuccess(month)))
+  }
 }
 
 export const categoryUpdateRequest = transaction => {

@@ -2,6 +2,8 @@ import React from 'react'
 import { shallow } from 'enzyme'
 import { TransactionContainer } from './transaction-container'
 
+jest.mock('../../persistence')
+
 describe('Transaction Container', () => {
   it('has a disabled category if it is updating', () => {
     const transaction = { categoryId: 'drinks-out' }
