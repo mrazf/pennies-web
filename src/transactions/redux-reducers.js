@@ -1,4 +1,5 @@
 import * as R from 'ramda'
+import moment from 'moment'
 
 const initialState = {
   allIds: [],
@@ -6,7 +7,7 @@ const initialState = {
   updatingIds: [],
   requested: false,
   received: false,
-  selectedMonth: 0
+  selectedMonth: moment().month()
 }
 
 const transactions = (state = initialState, action) => {
