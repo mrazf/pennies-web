@@ -23,7 +23,7 @@ export class TransactionContainer extends Component {
         onBlur={this.props.contract}
         onFocus={this.props.expand}
         disabled={this.props.updating}
-        categoryId={this.props.transaction.category}
+        categoryId={this.props.transaction.categoryId}
         updateCategory={this.updateCategory()}
       />
     )
