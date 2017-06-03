@@ -1,6 +1,10 @@
 .time-range-picker {
   margin-top: 1em;
-  margin-bottom: 2em;
+  margin-bottom: 1em;
+
+  .btn {
+    padding: 0.3rem 0.8rem;
+  }
 
   .btn:hover {
     cursor: pointer;

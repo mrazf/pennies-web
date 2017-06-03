@@ -27,6 +27,11 @@ class Transactions extends Component {
         <div className='transactions__picker row'>
           <TimeRangeContainer />
         </div>
+        <div className='transactions__headlines row'>
+          <div className='col-6 offset-3'>
+            Hello
+          </div>
+        </div>
         <div className='row justify-content-center'>
           <div className='col-7'>
             <div className={tableClasses}>

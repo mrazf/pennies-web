@@ -1,6 +1,10 @@
 @import "~bootstrap/scss/bootstrap.scss";
 
 .transactions {
+  .transactions__headlines {
+    margin-bottom: 1em;
+  }
+
   .transactions__table {
     .amount-header {
       padding-left: 2%
@@ -41,6 +45,13 @@
       .transaction-row__category {
         width: 25%;
       }
+    }
+  }
+
+  thead {
+    th {
+      vertical-align: bottom;
+      border-bottom: 1px solid #eceeef;
     }
   }
 

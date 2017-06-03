@@ -60,12 +60,15 @@
   /* Wrapper for item list */
   .bm-item-list {
     color: black;
-    padding: 1em 0.8em 0.8em 0;
+    padding: 0.5em 0.8em 0.8em 0;
+
+    p {
+      margin-bottom: 0;
+    }
     
-    p, a {
+    a {
       padding-left: 1.5em;
       vertical-align: middle;
-      margin-bottom: 0;
       line-height: 2.5em;
 
       .badge {
