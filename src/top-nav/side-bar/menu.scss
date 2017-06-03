@@ -1,6 +1,12 @@
 @import "../../app";
 
 .side-bar {
+  a.active {
+    padding-left: 0.5em !important;
+    margin-left: 1em;
+    border-left: 3px solid #7C8EB7
+  }
+
   .sidebar__divider {
     border-bottom: 1px solid #7C8EB7
   }
