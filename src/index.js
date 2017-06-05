@@ -11,7 +11,6 @@ import Dashboard from './dashboard/dashboard'
 import DashboardHome from './dashboard/home/home'
 import Transactions from './transactions/transactions'
 import Categories from './categories/categories'
-import ExporterOrSetup from './exporter/exporter-or-setup'
 
 render((
   <Provider store={configureStore()}>
@@ -22,7 +21,6 @@ render((
           <Route path='/dashboard' component={DashboardHome} />
           <Route path='/dashboard/transactions' component={Transactions} />
           <Route path='/dashboard/categories' component={Categories} />
-          <Route path='/dashboard/exporter' component={ExporterOrSetup} />
         </Route>
       </Route>
     </Router>

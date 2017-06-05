@@ -27,11 +27,6 @@ class Menu extends Component {
               Transactions
             </Link>
           </p>
-          <p>
-            <Link to='/dashboard/exporter' activeClassName='active'>
-              Exporter
-            </Link>
-          </p>
         </SideMenu>
       </div>
     )

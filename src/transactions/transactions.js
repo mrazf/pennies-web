@@ -4,6 +4,7 @@ import * as R from 'ramda'
 import classnames from 'classnames'
 import TransactionContainer from './transaction/transaction-container'
 import TimeRangeContainer from './time-range-container'
+import HeadlinesContainer from './headlines/headlines-container'
 import { updateCategory } from './redux-actions'
 import './transactions.scss'
 
@@ -29,7 +30,7 @@ class Transactions extends Component {
         </div>
         <div className='transactions__headlines row'>
           <div className='col-6 offset-3'>
-            Hello
+            <HeadlinesContainer selectedMonth={this.props.selectedMonth} />
           </div>
         </div>
         <div className='row justify-content-center'>
@@ -75,6 +76,7 @@ const mapStateToProps = state => {
   return {
     transactions: state.transactions.byId,
     updatingTransactions: state.transactions.updatingIds,
+    selectedMonth: state.transactions.selectedMonth,
     categories: state.categories.byId
   }
 }

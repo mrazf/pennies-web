@@ -6,6 +6,21 @@
   }
 
   .transactions__table {
+    thead {
+      th {
+        vertical-align: bottom;
+        border-bottom: 1px solid #eceeef;
+      }
+    }
+
+    tbody {
+      tr {
+        td {
+          vertical-align: middle !important;
+        }
+      }
+    }
+
     .amount-header {
       padding-left: 2%
     }
@@ -44,21 +59,6 @@
     &.expanded {
       .transaction-row__category {
         width: 25%;
-      }
-    }
-  }
-
-  thead {
-    th {
-      vertical-align: bottom;
-      border-bottom: 1px solid #eceeef;
-    }
-  }
-
-  tbody {
-    tr {
-      td {
-        vertical-align: middle !important;
       }
     }
   }
