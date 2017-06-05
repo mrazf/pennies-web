@@ -20,7 +20,7 @@ class Transactions extends Component {
 
   render () {
     const ids = Object.keys(this.props.transactions)
-    const transactions = ids.map(id => this.props.transactions[id])
+    const transactions = ids.map(id => this.props.transactions[id]).reverse()
     const tableClasses = classnames('transactions__table', { expanded: this.state.expanded })
 
     return (
