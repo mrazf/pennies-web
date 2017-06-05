@@ -48,11 +48,12 @@ class Transactions extends Component {
                 </thead>
                 <tbody>
                   {
-                    transactions.map(t => {
+                    transactions.map((t, i) => {
                       const updating = R.contains(t.id, this.props.updatingTransactions)
 
                       return (
                         <TransactionContainer
+                          rowIndex={i}
                           updating={updating}
                           transaction={t}
                           expand={this.expand}

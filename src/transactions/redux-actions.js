@@ -26,13 +26,16 @@ export const categoryUpdateFailure = err => {
   return { type: 'CATEGORY_UPDATE_FAILURE' }
 }
 
-export const updateCategory = (transaction, categoryId) => {
+export const updateCategory = (transaction, rowIndex, categoryId) => {
   return (dispatch, getState) => {
     dispatch(categoryUpdateRequest(transaction))
 
     const token = getState().token.value
     const method = 'POST'
-    const body = JSON.stringify({ categoryId })
+    const body = JSON.stringify({
+      transaction: { ...transaction, categoryId },
+      metadata: { rowIndex }
+    })
     const headers = {
       'Authorization': `Bearer: ${token}`,
       'Accept': 'application/json',

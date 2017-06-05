@@ -13,7 +13,7 @@ export class TransactionContainer extends Component {
 
   updateCategory () {
     return category => {
-      return this.props.updateCategory(this.props.transaction, category)
+      return this.props.updateCategory(this.props.transaction, this.props.rowIndex, category)
     }
   }
 
@@ -40,7 +40,11 @@ export class TransactionContainer extends Component {
 }
 
 const mapDispatchToProps = dispatch => {
-  return { updateCategory: (transaction, categoryUpdate) => dispatch(updateCategory(transaction, categoryUpdate)) }
+  return {
+    updateCategory: (transaction, rowIndex, categoryUpdate) => {
+      dispatch(updateCategory(transaction, rowIndex, categoryUpdate))
+    }
+  }
 }
 
 export default connect(null, mapDispatchToProps)(TransactionContainer)
