@@ -6,6 +6,14 @@
   }
 
   .transactions__table {
+    .table {
+        &.expanded {
+        .transaction-row__category {
+          width: 25%;
+        }
+      }
+    }
+
     thead {
       th {
         vertical-align: bottom;
@@ -53,12 +61,6 @@
         overflow: hidden;
         text-overflow: ellipsis;
         white-space: nowrap;
-      }
-    }
-
-    &.expanded {
-      .transaction-row__category {
-        width: 25%;
       }
     }
   }
