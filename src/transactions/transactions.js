@@ -5,6 +5,7 @@ import classnames from 'classnames'
 import TransactionContainer from './transaction/transaction-container'
 import TimeRangeContainer from './time-range-container'
 import HeadlinesContainer from './headlines/headlines-container'
+import Breadcrumb from './breadcrumb'
 import { updateCategory } from './redux-actions'
 import './transactions.scss'
 
@@ -24,17 +25,22 @@ class Transactions extends Component {
     const tableClasses = classnames('transactions__table', { expanded: this.state.expanded })
 
     return (
-      <div className='transactions container-fluid'>
+      <div className='transactions container'>
         <div className='transactions__picker row'>
           <TimeRangeContainer />
         </div>
         <div className='transactions__headlines row'>
-          <div className='col-6 offset-3'>
+          <div className='col'>
             <HeadlinesContainer selectedMonth={this.props.selectedMonth} />
           </div>
         </div>
-        <div className='row justify-content-center'>
-          <div className='col-7'>
+        <div className='transactions__breadcrumb row'>
+          <div className='col'>
+            <Breadcrumb />
+          </div>
+        </div>
+        <div className='row'>
+          <div className='col'>
             <div className={tableClasses}>
               <table className='table table-sm'>
                 <thead>
