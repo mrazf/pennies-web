@@ -22,6 +22,9 @@ class TransactionComponent extends Component {
         <td className='transaction-row__monzo-category'>
           {transaction.monzoCategory}
         </td>
+        <td onClick={this.props.openTransaction}>
+          <i className='fa fa-caret-down fa-2' aria-hidden='true' />
+        </td>
       </tr>
     )
   }

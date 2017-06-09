@@ -24,12 +24,14 @@
       "jest",
       "describe",
       "expect",
+      "test",
       "it"
     ]
   },
   "jest": {
     "testMatch": [
-      "**/*-test.js"
+      "**/*-test.js",
+      "**/*.test.js"
     ],
     "globals": {
       "__API_HOST__": "pop"

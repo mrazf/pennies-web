@@ -34,6 +34,7 @@ export class TransactionContainer extends Component {
       <TransactionComponent
         categorizeContainer={this.categorizeContainer()}
         transaction={this.props.transaction}
+        openTransaction={this.props.openTransaction}
       />
     )
   }
