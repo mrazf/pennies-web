@@ -1,5 +1,5 @@
 import slugify from 'slugify'
-import { database } from '../index'
+import database from '../persistence'
 
 export const addNewCategoryRequest = category => {
   return { type: 'ADD_NEW_CATEGORY_REQUEST', ...category }

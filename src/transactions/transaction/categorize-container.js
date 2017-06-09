@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { Creatable } from 'react-select'
+import { addNewCategory } from '../../categories/actions'
 
 const NOT_SET = { value: 'not-set', label: 'Not Set' }
 
@@ -17,7 +18,6 @@ class CategorizeContainer extends Component {
     super(props)
 
     this.onChange = this.onChange.bind(this)
-    this.newCategory = this.newCategory.bind(this)
   }
 
   onChange (chosen) {
@@ -26,21 +26,10 @@ class CategorizeContainer extends Component {
     this.props.updateCategory(chosen.value)
   }
 
-  newCategory (params) {
-    return new Promise((resolve, reject) => {
-      this.setState({ ...this.state, disabled: true, loading: true })
-
-      console.log('newCategory', params)
-      window.setTimeout(() => this.setState({ value: 'rent', disabled: false, loading: false }), 2000)
-
-      resolve()
-    })
-  }
-
   createableOptions () {
     return {
       onNewOptionClick: ({ label, labelKey, valueKey }) => {
-        this.newCategory(label)
+        this.props.addNewCategory(label)
       },
       promptTextCreator: option => `Create category "${option}"`
     }
@@ -70,4 +59,8 @@ const mapStateToProps = state => {
   return { categories: categoriesToOptions(state.categories.byId) }
 }
 
-export default connect(mapStateToProps)(CategorizeContainer)
+const mapDispatchToProps = dispatch => {
+  return { addNewCategory: label => dispatch(addNewCategory(label)) }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(CategorizeContainer)
