@@ -1,8 +1,6 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router'
-import Menu from './side-bar/menu'
 import UserLinks from './user-links'
-import HamburgerButton from './hamburger-button'
 
 import 'bootstrap/scss/bootstrap.scss'
 import './index.scss'
@@ -27,9 +25,7 @@ export default class TopNav extends Component {
       <header className='top-nav'>
         <nav className='container-fluid'>
           <div className='row'>
-            <div className='col-3 col-lg-1'>
-              <HamburgerButton open={this.state.open} toggle={this.toggle} />
-            </div>
+            <div className='col-3 col-lg-1' />
             <div className='hidden-sm-down offset-lg-1 col-lg-3'>
               <a className='nav-item navbar-brand' href='#'>Pennies</a>
               <Link to='/' className='collapse nav-item nav-link'>Home</Link>
@@ -44,7 +40,6 @@ export default class TopNav extends Component {
             </div>
           </div>
         </nav>
-        <Menu open={this.state.open} />
       </header>
     )
   }

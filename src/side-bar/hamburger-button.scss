@@ -1,0 +1,30 @@
+$hamburger-layer-width: 40px;
+$hamburger-layer-spacing: 4px;
+$hamburger-layer-height: 4px;
+$hamburger-layer-color: black;
+
+@import "~hamburgers/_sass/hamburgers/hamburgers.scss";
+
+.hamburger {
+  padding: 0.1em 2.5em 0;
+  z-index: 3;
+  position: fixed;
+  color: white;
+
+  .hamburger-box {
+    position: relative;
+    display: inline-block;
+    width: 40px;
+    height: 24px;
+  }
+
+  &.is-active {
+    .hamburger-inner {
+      width: 35px;
+    }
+
+    .hamburger-inner::after {
+      width: 35px;
+    }
+  }
+}

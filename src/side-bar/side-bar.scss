@@ -1,0 +1,21 @@
+.side-bar {
+  .side-bar__link {
+    p {
+      padding-left: 1em;
+      line-height: 2.5em;
+    }
+
+    &.active {
+      p {
+        background-color: #f2f2f2;
+        border-radius: 2px;
+      }
+    }
+  }
+
+  .side-bar__sublink {
+    a {
+      padding-left: 2em;
+    }
+  }
+}

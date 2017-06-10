@@ -1,0 +1,82 @@
+@import "../app";
+
+.side-bar {
+  .bm-menu-wrap {
+    width: 14em;
+    background-color: #fefefe;
+    border-right: 2px solid ghostwhite
+  }
+
+  .sidebar__divider {
+    border-bottom: 1px solid #7C8EB7
+  }
+
+  /* Position and sizing of burger button */
+  .bm-burger-button {
+    position: fixed;
+    width: 30px;
+    height: 15px;
+    left: 15px;
+    top: 50px;
+  }
+
+  /* Color/shape of burger icon bars */
+  .bm-burger-bars {
+    height: 17%;
+    background: #373a47;
+  }
+
+  /* Position and sizing of clickable cross button */
+  .bm-cross-button {
+    height: 24px;
+    width: 24px;
+  }
+
+  /* Color/shape of close button cross */
+  .bm-cross {
+    background: #bdc3c7;
+  }
+
+  /* General sidebar styles */
+  .bm-menu {
+    background: #e6e6e6;
+    padding: 0 0.5em 0;
+  }
+
+  @include media-breakpoint-up(sm) {
+    .bm-menu {
+      background: none;
+    }
+  }
+
+  /* Morph shape necessary with bubble or elastic */
+  .bm-morph-shape {
+    fill: #373a47;
+  }
+
+  /* Wrapper for item list */
+  .bm-item-list {
+    color: black;
+    padding: 3.8em 0.8em 0.8em 0.8em;
+
+    p {
+      margin-bottom: 0;
+    }
+    
+    a {
+      .badge {
+        margin-left: 10px;
+        vertical-align: text-top;
+      }
+    }
+
+    .last-updated {
+      line-height: 2em;
+    }
+  }
+
+  /* Styling of overlay */
+  .bm-overlay {
+    background: rgba(0, 0, 0, 0.3);
+  }
+}
