@@ -1,17 +1,20 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import classnames from 'classnames'
 import moment from 'moment'
 import { monthChange } from '../transactions/redux-actions'
 
 class MonthSelector extends Component {
   render () {
     return (
-      <nav className='side-bar__sublink nav flex-column'>
+      <nav className='month-selector nav flex-column'>
         {
-          moment.monthsShort().map((m, i) => {
+          moment.months().map((m, i) => {
+            const classes = classnames('nav-link', { 'active': i === this.props.selectedMonth })
+
             return (
               <a
-                className='side-bar__sublink nav-link active'
+                className={classes}
                 onClick={() => this.props.monthChange(i)}
                 key={i}>
                 {m}

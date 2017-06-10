@@ -13,9 +13,5 @@
     }
   }
 
-  .side-bar__sublink {
-    a {
-      padding-left: 2em;
-    }
-  }
+  @import "./month-selector";
 }

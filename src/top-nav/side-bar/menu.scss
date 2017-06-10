@@ -48,14 +48,7 @@
 
   /* General sidebar styles */
   .bm-menu {
-    background: #e6e6e6;
     padding: 0 0.5em 0;
-  }
-
-  @include media-breakpoint-up(sm) {
-    .bm-menu {
-      background: none;
-    }
   }
 
   /* Morph shape necessary with bubble or elastic */

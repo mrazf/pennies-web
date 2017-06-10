@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Link, withRouter } from 'react-router'
 import { slide as SideMenu } from 'react-burger-menu'
-import TimeRangeComponent from './month-selector'
+import MonthSelector from './month-selector'
 import './side-bar-react-burger-menu.scss'
 import './side-bar.scss'
 
@@ -21,7 +21,7 @@ class SideBar extends Component {
   render () {
     return (
       <div className='side-bar'>
-        <SideMenu noOverlay styles={styles} width={280} isOpen={this.state.open} customBurgerIcon={false}>
+        <SideMenu noOverlay styles={styles} width={280} isOpen={this.state.open}>
           <Link to='/dashboard' className='side-bar__link' activeClassName='active'>
             <p className='sidebar__divider lead'>
               Dashboard
@@ -37,7 +37,7 @@ class SideBar extends Component {
               Transactions
             </p>
           </Link>
-          <TimeRangeComponent />
+          <MonthSelector />
         </SideMenu>
       </div>
     )
