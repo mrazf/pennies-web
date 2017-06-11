@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { Creatable } from 'react-select'
-import { addNewCategory } from '../../categories/actions'
+import addNewCategory from '../redux-actions/new-category'
 
 const NOT_SET = { value: 'not-set', label: 'Not Set' }
 

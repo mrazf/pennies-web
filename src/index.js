@@ -4,10 +4,10 @@ import { Provider } from 'react-redux'
 import { Router, Route, IndexRoute, browserHistory } from 'react-router'
 
 import './firebase'
-import configureStore from './store'
+import configureStore from './app-store'
 import App from './app'
 import Home from './home'
-import Dashboard from './dashboard/dashboard'
+import Auth from './user/auth'
 import Transactions from './transactions/transactions'
 
 render((
@@ -15,7 +15,7 @@ render((
     <Router history={browserHistory}>
       <Route path='/' component={App}>
         <IndexRoute component={Home} />
-        <Route component={Dashboard}>
+        <Route component={Auth}>
           <Route path='/dashboard/transactions' component={Transactions} />
         </Route>
       </Route>

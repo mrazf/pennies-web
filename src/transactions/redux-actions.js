@@ -1,4 +1,5 @@
-import { fetchTransactions } from '../dashboard/dashboard-actions'
+import fetchTransactions from './redux-actions/fetch-transactions'
+import fetchCategories from './redux-actions/fetch-categories'
 
 const apiHost = __API_HOST__
 
@@ -46,5 +47,27 @@ export const updateCategory = (transaction, rowIndex, categoryId) => {
       .then(response => response.json())
       .then(json => dispatch(categoryUpdateSuccess(json.transaction)))
       .catch(err => dispatch(categoryUpdateFailure(err)))
+  }
+}
+
+const startSetupTransactions = () => {
+  return { type: 'START_SETUP_TRANSACTIONS' }
+}
+
+const successfulSetupTransactions = () => {
+  return { type: 'SUCCESSFUL_SETUP_TRANSACTIONS' }
+}
+
+export const setupTransactions = () => {
+  return (dispatch, getState) => {
+    dispatch(startSetupTransactions())
+
+    const { user, transactions } = getState()
+
+    const transactionsPromise = dispatch(fetchTransactions(user.token, transactions.selectedMonth))
+    const categoriesPromise = dispatch(fetchCategories(user.uid))
+
+    return Promise.all([transactionsPromise, categoriesPromise])
+      .then(() => dispatch(successfulSetupTransactions()))
   }
 }

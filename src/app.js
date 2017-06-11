@@ -7,7 +7,7 @@ import './app.scss'
 class App extends Component {
   render () {
     return (
-      <div>
+      <div className='pennies'>
         <SideBar />
         <TopNav />
         { this.props.children }

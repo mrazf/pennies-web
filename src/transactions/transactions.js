@@ -1,11 +1,16 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import { setupTransactions } from './redux-actions'
 import Switcher from './switcher'
 import HeadlinesContainer from './headlines/headlines-container'
 import Table from './table'
 import './transactions.scss'
 
 class Transactions extends Component {
+  componentDidMount () {
+    this.props.setupTransactions()
+  }
+
   render () {
     return (
       <div className='transactions container'>
@@ -38,6 +43,8 @@ const mapStateToProps = state => {
   }
 }
 
-const TransactionsContainer = connect(mapStateToProps)(Transactions)
+const mapDispatchToProps = dispatch => {
+  return { setupTransactions: () => dispatch(setupTransactions()) }
+}
 
-export default TransactionsContainer
+export default connect(mapStateToProps, mapDispatchToProps)(Transactions)

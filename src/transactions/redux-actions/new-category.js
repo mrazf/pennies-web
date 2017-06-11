@@ -1,11 +1,11 @@
 import slugify from 'slugify'
-import database from '../persistence'
+import database from '../../persistence'
 
-export const addNewCategoryRequest = category => {
+const addNewCategoryRequest = category => {
   return { type: 'ADD_NEW_CATEGORY_REQUEST', ...category }
 }
 
-export const categoryUpdateSuccess = () => {
+const categoryUpdateSuccess = () => {
   return { type: 'ADD_NEW_CATEGORY_SUCCESS' }
 }
 
@@ -23,3 +23,5 @@ export const addNewCategory = name => {
       .then(() => dispatch(categoryUpdateSuccess()))
   }
 }
+
+export default addNewCategory
