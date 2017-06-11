@@ -22,16 +22,6 @@ class SideBar extends Component {
     return (
       <div className='side-bar'>
         <SideMenu noOverlay styles={styles} width={280} isOpen={this.state.open}>
-          <Link to='/dashboard' className='side-bar__link' activeClassName='active'>
-            <p className='sidebar__divider lead'>
-              Dashboard
-            </p>
-          </Link>
-          <Link to='/dashboard/categories' className='side-bar__link' activeClassName='active'>
-            <p className='sidebar__divider lead'>
-              Categories
-            </p>
-          </Link>
           <Link to='/dashboard/transactions' className='side-bar__link' activeClassName='active'>
             <p className='lead'>
               Transactions

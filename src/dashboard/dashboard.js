@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import { Component } from 'react'
 import { connect } from 'react-redux'
 import firebase from 'firebase'
 import { userSetup, noUser } from './dashboard-actions'
@@ -14,13 +14,7 @@ class Dashboard extends Component {
   }
 
   render () {
-    return (
-      <div>
-        <div>
-          { this.props.children }
-        </div>
-      </div>
-    )
+    return this.props.children
   }
 }
 
