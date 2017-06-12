@@ -15,7 +15,7 @@ export const addNewCategory = name => {
 
     dispatch(addNewCategoryRequest({ slug, name }))
 
-    const uid = getState().user.data.uid
+    const uid = getState().user.uid
     const existingCategories = getState().categories.byId
     const categories = { ...existingCategories, [slug]: name }
 
