@@ -31,7 +31,7 @@ export const updateCategory = (transaction, rowIndex, categoryId) => {
   return (dispatch, getState) => {
     dispatch(categoryUpdateRequest(transaction))
 
-    const token = getState().token.value
+    const token = getState().user.token
     const method = 'POST'
     const body = JSON.stringify({
       transaction: { ...transaction, categoryId },
