@@ -9,7 +9,6 @@ const refreshMonthSuccess = () => {
 }
 
 const refreshMonth = monthNumber => {
-  console.log(monthNumber)
   return (dispatch, getState) => {
     dispatch(refreshMonthRequest())
 

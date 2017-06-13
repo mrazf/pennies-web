@@ -8,8 +8,10 @@ const monthChangeSuccess = month => {
 }
 
 export const monthChange = month => {
-  return dispatch => {
-    return dispatch(fetchTransactions(month))
+  return (dispatch, getState) => {
+    const { token } = getState().user
+
+    return dispatch(fetchTransactions(token, month))
       .then(() => dispatch(monthChangeSuccess(month)))
   }
 }
