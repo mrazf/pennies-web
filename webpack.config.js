@@ -21,7 +21,8 @@ module.exports = {
     new HtmlWebpackPlugin({ template: './src/index.ejs' }),
     new webpack.DefinePlugin({
       __API_HOST__: process.env.API_HOST
-    })
+    }),
+    new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/)
   ],
   devtool: 'eval-source-map',
   devServer: {

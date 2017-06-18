@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import classnames from 'classnames'
-import * as R from 'ramda'
+import contains from 'ramda/src/contains'
 import TransactionContainer from './transaction/transaction-container'
 
 class Table extends Component {
@@ -32,7 +32,7 @@ class Table extends Component {
         <tbody>
           {
             transactions.map((t, i) => {
-              const updating = R.contains(t.id, this.props.updatingTransactions)
+              const updating = contains(t.id, this.props.updatingTransactions)
 
               return (
                 <TransactionContainer

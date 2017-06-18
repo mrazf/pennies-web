@@ -12,7 +12,8 @@
     "dev:production": "API_HOST=\"'https://rampton.herokuapp.com'\" webpack-dev-server",
     "lint": "standard \"src/**/*.js\"",
     "test": "jest",
-    "build": "webpack"
+    "build": "webpack",
+    "build:analyse": "webpack --profile --json > stats.json && webpack-bundle-analyzer stats.json"
   },
   "precommit": [
     "lint",
@@ -56,9 +57,7 @@
     "redux-devtools-extension": "~2.13.2",
     "redux-logger": "^2.8.2",
     "redux-thunk": "^2.2.0",
-    "sass-loader": "~6.0.5",
-    "slugify": "^1.1.0",
-    "webpack": "~2.6.1"
+    "slugify": "^1.1.0"
   },
   "devDependencies": {
     "babel-core": "^6.25.0",
@@ -76,8 +75,11 @@
     "npm-run-all": "^4.0.2",
     "pre-commit": "^1.2.2",
     "react-addons-test-utils": "^15.5.1",
+    "sass-loader": "^6.0.6",
     "standard": "^10.0.2",
     "style-loader": "^0.18.2",
+    "webpack": "^2.6.1",
+    "webpack-bundle-analyzer": "^2.8.2",
     "webpack-dev-server": "^2.4.5"
   }
 }

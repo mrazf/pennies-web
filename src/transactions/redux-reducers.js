@@ -1,4 +1,4 @@
-import * as R from 'ramda'
+import without from 'ramda/src/without'
 import moment from 'moment'
 
 const initialState = {
@@ -29,7 +29,7 @@ const transactions = (state = initialState, action) => {
     case 'CATEGORY_UPDATE_SUCCESS':
       const updatedId = action.transaction.id
       const updatedById = { ...state.byId, [updatedId]: action.transaction }
-      const updatingIds = R.without(updatedId, state.updatingIds)
+      const updatingIds = without(updatedId, state.updatingIds)
 
       return { ...state, byId: updatedById, updatingIds }
     default: return state

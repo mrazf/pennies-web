@@ -3,6 +3,7 @@
 
 # Build
 dist
+stats.json
 
 # OS
 .DS_Store
