@@ -12,7 +12,7 @@
     "dev:production": "API_HOST=\"'https://rampton.herokuapp.com'\" webpack-dev-server",
     "lint": "standard \"src/**/*.js\"",
     "test": "jest",
-    "build": "webpack",
+    "build": "webpack -p",
     "build:analyse": "webpack --profile --json > stats.json && webpack-bundle-analyzer stats.json"
   },
   "precommit": [
