@@ -10,7 +10,7 @@ export const userSetup = user => {
   return dispatch => {
     dispatch(requestToken())
 
-    return user.getToken(true)
+    return user.getToken()
       .then(token => dispatch(receiveToken({user, token})))
   }
 }
