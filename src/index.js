@@ -9,6 +9,7 @@ import App from './app'
 import Home from './home'
 import Auth from './user/auth'
 import Transactions from './transactions/transactions'
+import Admin from './admin/admin'
 
 render((
   <Provider store={configureStore()}>
@@ -16,6 +17,7 @@ render((
       <Route path='/' component={App}>
         <IndexRoute component={Home} />
         <Route component={Auth}>
+          <Route path='/admin' component={Admin} />
           <Route path='/dashboard/transactions' component={Transactions} />
         </Route>
       </Route>
