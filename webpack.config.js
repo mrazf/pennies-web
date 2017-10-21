@@ -22,7 +22,13 @@ module.exports = {
     new webpack.DefinePlugin({
       __API_HOST__: process.env.API_HOST
     }),
-    new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/)
+    new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/),
+    new webpack.ProvidePlugin({
+      $: 'jquery',
+      jQuery: 'jquery',
+      'window.jQuery': 'jquery',
+      Popper: ['popper.js', 'default']
+    })
   ],
   devtool: 'eval-source-map',
   devServer: {

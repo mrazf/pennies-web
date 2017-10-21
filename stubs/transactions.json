@@ -1,299 +1,282 @@
 {
   "transactions": [{
-    "dateTime": "2017-05-01T16:14:14.077Z",
-    "amount": 13.6,
-    "merchant": "The Original Oak",
-    "category": "",
-    "address": "Otley Road, Leeds LS6 2DG",
-    "monzoCategory": "eating_out",
-    "id": "tx_00009JxxFGieB7EnhTmKxt"
-  }, {
-    "dateTime": "2017-05-02T11:26:35.43Z",
-    "amount": 10,
-    "merchant": "Sky Staff Restaurant",
-    "category": "",
-    "address": "Staff Restaurant Online Top Up, Online Top Up EH54 7BW",
-    "monzoCategory": "eating_out",
-    "id": "tx_00009Jzc5VxOxZUNwKKMpl"
-  }, {
-    "dateTime": "2017-05-02T15:47:45.2Z",
-    "amount": 3.2,
-    "merchant": "Tesco Express",
-    "category": "",
-    "address": "2 The Boulevard, Leeds LS10 1PZ",
-    "monzoCategory": "groceries",
-    "id": "tx_00009JzzOa7pz4kI3HI4x7"
-  }, {
-    "dateTime": "2017-05-02T15:51:51.173Z",
-    "amount": 20,
-    "merchant": "CitiPark",
-    "category": "",
-    "address": "Armouries Drive, Leeds LS10 1LE",
+    "dateTime": "2017-10-04T00:00:50.04Z",
+    "currency": "GBP",
+    "amount": 66,
+    "merchant": "Parking Bay Sentry",
+    "categoryId": "commute",
+    "address": "Somewhere in Room 424, 7 Gra, 443333444677, 00, Finland",
     "monzoCategory": "transport",
-    "id": "tx_00009JzzlGRdK407fpMk0f"
+    "id": "tx_00009P9uWnym2CbIR3LNth"
   }, {
-    "dateTime": "2017-05-03T06:28:36.923Z",
-    "amount": 29,
-    "merchant": "Malthurst Petrol",
-    "category": "",
-    "address": "Meanwood Road, Leeds LS7 2JD",
+    "dateTime": "2017-10-20T09:38:32Z",
+    "currency": "GBP",
+    "amount": 11.8,
+    "merchant": "North Star",
+    "categoryId": "not-set",
+    "address": "Leeds Dok, Leeds LS10 1PZ",
+    "monzoCategory": "eating_out",
+    "id": "tx_00009PhuJ4FtKVAYEdRBlR"
+  }, {
+    "dateTime": "2017-10-01T12:11:18.135Z",
+    "currency": "GBP",
+    "amount": 0,
+    "merchant": "Caixa 24 Horas",
+    "categoryId": "not-set",
+    "address": "Sainsburys, Leeds",
+    "monzoCategory": "cash",
+    "id": "tx_00009P4kB3YtRoUREgRJez"
+  }, {
+    "dateTime": "2017-10-01T13:04:13.626Z",
+    "currency": "GBP",
+    "amount": 28.81,
+    "merchant": "BP",
+    "categoryId": "transport",
+    "address": "401 Harrogate Road, Leeds LS17 6DJ",
     "monzoCategory": "transport",
-    "id": "tx_00009K1G0aTGwKiGYLQ9ZZ"
+    "id": "tx_00009P4ottxSOuYY7hYgTJ"
   }, {
-    "dateTime": "2017-05-04T11:32:30.387Z",
-    "amount": 3,
-    "merchant": "Tesco Express",
-    "category": "",
-    "address": "2 The Boulevard, Leeds LS10 1PZ",
-    "monzoCategory": "groceries",
-    "id": "tx_00009K3ldwVaQQSuLweGOn"
-  }, {
-    "dateTime": "2017-05-05T14:01:51.047Z",
-    "amount": 10.65,
-    "merchant": "Sainsbury's Local",
-    "category": "",
-    "address": "Otley Road, Leeds LS6 2UE",
-    "monzoCategory": "groceries",
-    "id": "tx_00009K63UALgIdnTsBQHWT"
-  }, {
-    "dateTime": "2017-05-08T12:14:52.457Z",
-    "amount": 0.69,
-    "merchant": "Tesco Express",
-    "category": "",
-    "address": "2 The Boulevard, Leeds LS10 1PZ",
-    "monzoCategory": "groceries",
-    "id": "tx_00009KC7TnFviudv17ZPuL"
-  }, {
-    "dateTime": "2017-05-08T16:25:25.07Z",
-    "amount": 20,
-    "merchant": "CitiPark",
-    "category": "",
-    "address": "Armouries Drive, Leeds LS10 1LE",
-    "monzoCategory": "transport",
-    "id": "tx_00009KCTq7dunv0FblqEQD"
-  }, {
-    "dateTime": "2017-05-09T15:23:45.15Z",
-    "amount": 6.85,
-    "merchant": "Tesco Express",
-    "category": "",
-    "address": "2 The Boulevard, Leeds LS10 1PZ",
-    "monzoCategory": "groceries",
-    "id": "tx_00009KESqlamYrojH4oqcj"
-  }, {
-    "dateTime": "2017-05-10T11:33:37.26Z",
-    "amount": 3,
-    "merchant": "Tesco Express",
-    "category": "",
-    "address": "2 The Boulevard, Leeds LS10 1PZ",
-    "monzoCategory": "groceries",
-    "id": "tx_00009KGCpHDCoqLZoNyke9"
-  }, {
-    "dateTime": "2017-05-10T19:17:05.83Z",
-    "amount": 7.6,
-    "merchant": "The Original Oak",
-    "category": "",
-    "address": "Otley Road, Leeds LS6 2DG",
-    "monzoCategory": "eating_out",
-    "id": "tx_00009KGsBlzz8EG6NprRMP"
-  }, {
-    "dateTime": "2017-05-11T19:53:24.523Z",
-    "amount": 21.3,
-    "merchant": "Ecco Pizzeria",
-    "category": "",
-    "address": "93 Otley Road, Leeds LS6 3PS",
-    "monzoCategory": "eating_out",
-    "id": "tx_00009KIzwXoWmArUjSgxPt"
-  }, {
-    "dateTime": "2017-05-13T11:33:16.937Z",
-    "amount": 95,
-    "merchant": "IKEA",
-    "category": "",
-    "address": "Holden Ing Way, Batley WF17 9AE",
-    "monzoCategory": "shopping",
-    "id": "tx_00009KMQKxkhAczVF63mIz"
-  }, {
-    "dateTime": "2017-05-14T16:57:30.313Z",
-    "amount": 36.5,
-    "merchant": "Chapel allerton tennis, Squash And Gym Club",
-    "category": "",
-    "address": "Wensley Avenue, Leeds LS7 3QX",
-    "monzoCategory": "entertainment",
-    "id": "tx_00009KOxmoRD50w7Uvlic5"
-  }, {
-    "dateTime": "2017-05-15T11:36:36.08Z",
-    "amount": 2.5,
-    "merchant": "Leeds City College Park Lane Campus",
-    "category": "",
-    "address": "Park Lane, Leeds LS3 1AA",
-    "monzoCategory": "bills",
-    "id": "tx_00009KQZf1w50BOOSbsrGj"
-  }, {
-    "dateTime": "2017-05-15T15:44:31.753Z",
-    "amount": 1.58,
-    "merchant": "Tesco Express",
-    "category": "",
-    "address": "2 The Boulevard, Leeds LS10 1PZ",
-    "monzoCategory": "groceries",
-    "id": "tx_00009KQvmtIHDMLAxxQ4xd"
-  }, {
-    "dateTime": "2017-05-15T15:47:51.463Z",
-    "amount": 15,
-    "merchant": "CitiPark",
-    "category": "",
-    "address": "Armouries Drive, Leeds LS10 1LE",
-    "monzoCategory": "transport",
-    "id": "tx_00009KQw5I9BY61xGAwQhV"
-  }, {
-    "dateTime": "2017-05-16T15:51:37.523Z",
-    "amount": 14.59,
-    "merchant": "Tesco Express",
-    "category": "",
-    "address": "2 The Boulevard, Leeds LS10 1PZ",
-    "monzoCategory": "groceries",
-    "id": "tx_00009KT0vzbjzrEruCiZaT"
-  }, {
-    "dateTime": "2017-05-17T15:58:59.86Z",
-    "amount": 1.58,
-    "merchant": "Tesco Express",
-    "category": "",
-    "address": "2 The Boulevard, Leeds LS10 1PZ",
-    "monzoCategory": "groceries",
-    "id": "tx_00009KV66dXnG15EkTgbuT"
-  }, {
-    "dateTime": "2017-05-18T11:20:35.213Z",
-    "amount": 10,
-    "merchant": "Sky Staff Restaurant",
-    "category": "",
-    "address": "Staff Restaurant Online Top Up, Online Top Up EH54 7BW",
-    "monzoCategory": "eating_out",
-    "id": "tx_00009KWlm08mRI1Fyxmzfl"
-  }, {
-    "dateTime": "2017-05-18T14:32:42.173Z",
-    "amount": 5,
-    "merchant": "Tesco Express",
-    "category": "",
-    "address": "2 The Boulevard, Leeds LS10 1PZ",
-    "monzoCategory": "groceries",
-    "id": "tx_00009KX2v07pZ25F686j69"
-  }, {
-    "dateTime": "2017-05-19T19:30:23.31Z",
-    "amount": 13.7,
-    "merchant": "Whites Deli",
-    "category": "",
-    "address": "9 Otley Road, Leeds LS6 3AA",
-    "monzoCategory": "eating_out",
-    "id": "tx_00009KZY06xJ5Aq4cn1Okr"
-  }, {
-    "dateTime": "2017-05-19T19:54:22Z",
-    "amount": 4.5,
-    "merchant": "Whites Deli",
-    "category": "",
-    "address": "9 Otley Road, Leeds LS6 3AA",
-    "monzoCategory": "eating_out",
-    "id": "tx_00009KZa8hEuGP65NkTWPR"
-  }, {
-    "dateTime": "2017-05-19T20:27:44.203Z",
-    "amount": 6,
-    "merchant": "Sainsbury's Local",
-    "category": "",
-    "address": "Otley Road, Leeds LS6 2UE",
-    "monzoCategory": "groceries",
-    "id": "tx_00009KZd7McVjv8rfYgeMT"
-  }, {
-    "dateTime": "2017-05-21T14:35:01.337Z",
-    "amount": 22.5,
-    "merchant": "www.movietickets.co.uk",
-    "category": "",
-    "address": "100 Fetter Lane, Internet EC4A 1BN",
-    "monzoCategory": "entertainment",
-    "id": "tx_00009KdGfOoOZoxr6VDQP3"
-  }, {
-    "dateTime": "2017-05-21T14:59:46.303Z",
-    "amount": 0.01,
-    "merchant": "Transfer to +447753433318",
-    "category": "",
+    "dateTime": "2017-10-01T20:36:34.947Z",
+    "currency": "GBP",
+    "amount": 65.83,
+    "merchant": "Car stuff",
+    "categoryId": "car-tax",
     "address": "",
     "monzoCategory": "general",
-    "id": "tx_00009KdIsMBhqNfVX9YViz"
+    "id": "tx_00009P5TGtrUv89epKInYn"
   }, {
-    "dateTime": "2017-05-22T16:23:10.57Z",
-    "amount": 20,
-    "merchant": "CitiPark",
-    "category": "",
-    "address": "Armouries Drive, Leeds LS10 1LE",
-    "monzoCategory": "transport",
-    "id": "tx_00009KfUpi2fim6ID8knU9"
-  }, {
-    "dateTime": "2017-05-22T16:43:08.733Z",
-    "amount": 25,
-    "merchant": "Malthurst Petrol",
-    "category": "",
-    "address": "Meanwood Road, Leeds LS7 2JD",
-    "monzoCategory": "transport",
-    "id": "tx_00009KfWcDd3gX638QL1DV"
-  }, {
-    "dateTime": "2017-05-24T11:52:08.047Z",
+    "dateTime": "2017-10-02T11:46:55.508Z",
+    "currency": "GBP",
     "amount": 20,
     "merchant": "Sky Staff Restaurant",
-    "category": "",
+    "categoryId": "work-food-and-drink",
     "address": "Staff Restaurant Online Top Up, Online Top Up EH54 7BW",
     "monzoCategory": "eating_out",
-    "id": "tx_00009KjFffhkprAEioRz3B"
+    "id": "tx_00009P6mW1n5odSFsG7Qv3"
   }, {
-    "dateTime": "2017-05-24T16:53:25.563Z",
-    "amount": 3.5,
+    "dateTime": "2017-10-02T12:20:24.381Z",
+    "currency": "GBP",
+    "amount": 0.9,
     "merchant": "Tesco Express",
-    "category": "",
+    "categoryId": "food",
     "address": "2 The Boulevard, Leeds LS10 1PZ",
     "monzoCategory": "groceries",
-    "id": "tx_00009KjgYnrsmcWdRIFgDh"
+    "id": "tx_00009P6pVHwSa3HtiIqiKv"
   }, {
-    "dateTime": "2017-05-24T17:25:54.603Z",
-    "amount": 2.38,
-    "merchant": "The Co-operative Food",
-    "category": "",
-    "address": "1 Stainbeck Lane, Leeds LS7 3PJ",
-    "monzoCategory": "groceries",
-    "id": "tx_00009KjjSX4ac6fJTWtfYv"
+    "dateTime": "2017-10-03T06:19:59.177Z",
+    "currency": "GBP",
+    "amount": 0,
+    "merchant": "Spotify London",
+    "categoryId": "not-set",
+    "address": "Somewhere in London W1F 7TU",
+    "monzoCategory": "entertainment",
+    "id": "tx_00009P8Nqr7mYhoGKvYDJp"
   }, {
-    "dateTime": "2017-05-25T11:24:58.893Z",
-    "amount": 5,
-    "merchant": "The Hop",
-    "category": "",
-    "address": "The Dark Arches, Dark Neville St LS1 4BR",
-    "monzoCategory": "eating_out",
-    "id": "tx_00009KlHlJ26d63Y8Zgk1h"
+    "dateTime": "2017-10-03T06:29:56.465Z",
+    "currency": "GBP",
+    "amount": 0,
+    "merchant": "giffgaff",
+    "categoryId": "not-set",
+    "address": "Somewhere in the United Kingdom",
+    "monzoCategory": "bills",
+    "id": "tx_00009P8OjwBlQp7zyCg797"
   }, {
-    "dateTime": "2017-05-25T12:04:09.843Z",
-    "amount": 3.9,
-    "merchant": "Granary Wharf",
-    "category": "",
-    "address": "3 Wharf Approach, Leeds LS1 4GL",
-    "monzoCategory": "groceries",
-    "id": "tx_00009KlLG5yHXgP8T0Gye2"
+    "dateTime": "2017-10-03T16:37:52.389Z",
+    "currency": "GBP",
+    "amount": 9.99,
+    "merchant": "Spotify London",
+    "categoryId": "spotify",
+    "address": "25 Argyll Street, London W1F 7TU",
+    "monzoCategory": "entertainment",
+    "id": "tx_00009P9GzlghdXnPYm9Bq5"
   }, {
-    "dateTime": "2017-05-25T16:50:01.003Z",
-    "amount": 11.5,
+    "dateTime": "2017-10-03T19:13:11.422Z",
+    "currency": "GBP",
+    "amount": 325,
+    "merchant": "Debts",
+    "categoryId": "holiday-(summer)",
+    "address": "",
+    "monzoCategory": "general",
+    "id": "tx_00009P9UrBdXBlF2xwTejZ"
+  }, {
+    "dateTime": "2017-10-04T11:18:11.068Z",
+    "currency": "GBP",
+    "amount": 29.95,
+    "merchant": "ASOS",
+    "categoryId": "clothes-and-shoes",
+    "address": "Somewhere in the United Kingdom",
+    "monzoCategory": "shopping",
+    "id": "tx_00009PAsyiEUzHfMeHwRgf"
+  }, {
+    "dateTime": "2017-10-05T16:53:49.388Z",
+    "currency": "GBP",
+    "amount": 19.15,
     "merchant": "Sainsbury's Local",
-    "category": "",
-    "address": "6 Brewery Place, Leeds LS10 1NE",
+    "categoryId": "food",
+    "address": "Otley Road, Leeds LS6 2UE",
     "monzoCategory": "groceries",
-    "id": "tx_00009Klkln1s0AdSjcI7DF"
+    "id": "tx_00009PDRRjnK2tNdKMtseH"
   }, {
-    "dateTime": "2017-05-25T17:10:21.237Z",
-    "amount": 4.5,
-    "merchant": "Water Lane Apartments",
-    "category": "",
-    "address": "Canal Wharf, Leeds LS11 5PS",
-    "monzoCategory": "entertainment",
-    "id": "tx_00009KlmaJsYF1wG9dScCH"
+    "dateTime": "2017-10-06T11:21:54.903Z",
+    "currency": "GBP",
+    "amount": 5.3,
+    "merchant": "Rude Bar And Lounge",
+    "categoryId": "health-and-beauty",
+    "address": "13b North Lane, Leeds LS6 3HG",
+    "monzoCategory": "eating_out",
+    "id": "tx_00009PF2L4ERYI46xwOexN"
   }, {
-    "dateTime": "2017-05-28T19:37:30.62Z",
-    "amount": 3,
-    "merchant": "Victoria Car Park",
-    "category": "",
-    "address": "4 Cross Arcade, Leeds LS2 7AS",
+    "dateTime": "2017-10-06T11:23:30.187Z",
+    "currency": "GBP",
+    "amount": 20,
+    "merchant": "Caixa 24 Horas",
+    "categoryId": "events",
+    "address": "57 Great George Street, Leeds LS1 3BB",
+    "monzoCategory": "cash",
+    "id": "tx_00009PF2Tr2DzJ7Ydrs64n"
+  }, {
+    "dateTime": "2017-10-06T11:27:46.563Z",
+    "currency": "GBP",
+    "amount": 3.6,
+    "merchant": "Sainsbury's Local",
+    "categoryId": "food",
+    "address": "Otley Road, Leeds LS6 2UE",
+    "monzoCategory": "groceries",
+    "id": "tx_00009PF2rV5nDlmQileD4b"
+  }, {
+    "dateTime": "2017-10-07T00:00:49.908Z",
+    "currency": "GBP",
+    "amount": -13,
+    "merchant": "STRINGERSWO            +44 120680801 GBR",
+    "categoryId": "tennis",
+    "address": "",
+    "monzoCategory": "general",
+    "id": "tx_00009PG84KVUaCE8aHZ5d3"
+  }, {
+    "dateTime": "2017-10-07T10:16:01.492Z",
+    "currency": "GBP",
+    "amount": 39.98,
+    "merchant": "TK Maxx",
+    "categoryId": "clothes-and-shoes",
+    "address": "John Allen Way, Cowley OX4 3JP",
+    "monzoCategory": "shopping",
+    "id": "tx_00009PH0yL2hApWOd5PT7p"
+  }, {
+    "dateTime": "2017-10-08T14:01:44.68Z",
+    "currency": "GBP",
+    "amount": 4.8,
+    "merchant": "Marks and Spencer",
+    "categoryId": "food",
+    "address": "Tamworth Services M42, Tamworth B77 5PS",
+    "monzoCategory": "groceries",
+    "id": "tx_00009PJPd9jUui9ioiM92H"
+  }, {
+    "dateTime": "2017-10-09T20:17:11.226Z",
+    "currency": "GBP",
+    "amount": 48.72,
+    "merchant": "Vue Cinema",
+    "categoryId": "cinema",
+    "address": "Kirkstall Road, Leeds LS4 2DG",
     "monzoCategory": "entertainment",
-    "id": "tx_00009KsDG8KbKRR2G8wHnl"
+    "id": "tx_00009PM1eQGh6d8WxrpnvN"
+  }, {
+    "dateTime": "2017-10-09T23:41:59.045Z",
+    "currency": "GBP",
+    "amount": 13,
+    "merchant": "Stringers' World",
+    "categoryId": "tennis",
+    "address": "The Bowling Green, 44120680801 CO7 7AD",
+    "monzoCategory": "shopping",
+    "id": "tx_00009PMJvcJ5Ol7kOpIluL"
+  }, {
+    "dateTime": "2017-10-10T16:28:27.685Z",
+    "currency": "GBP",
+    "amount": 12.95,
+    "merchant": "Waterstones",
+    "categoryId": "gifts-and-presents",
+    "address": "97 Albion Street, Leeds LS1 5JS",
+    "monzoCategory": "entertainment",
+    "id": "tx_00009PNlkgdpvwyhiNNMJN"
+  }, {
+    "dateTime": "2017-10-10T16:35:42.02Z",
+    "currency": "GBP",
+    "amount": 9.5,
+    "merchant": "Pintura Basque Kitchen & Bar",
+    "categoryId": "drinks-out",
+    "address": "1 Trinity Street, Leeds LS1 6AP",
+    "monzoCategory": "eating_out",
+    "id": "tx_00009PNmOk2UiiK8eaB34L"
+  }, {
+    "dateTime": "2017-10-15T15:29:48.693Z",
+    "currency": "GBP",
+    "amount": 30.4,
+    "merchant": "Miller & Carter",
+    "categoryId": "food-out",
+    "address": "50 Otley Road, Leeds LS1 2JP",
+    "monzoCategory": "eating_out",
+    "id": "tx_00009PY35RWcyK6EX6Fq7t"
+  }, {
+    "dateTime": "2017-10-15T19:42:23.66Z",
+    "currency": "GBP",
+    "amount": 0,
+    "merchant": "UBER Amsterdam HQ",
+    "categoryId": "not-set",
+    "address": "Somewhere in the Netherlands",
+    "monzoCategory": "transport",
+    "id": "tx_00009PYPd2nhbNGWgjfVPl"
+  }, {
+    "dateTime": "2017-10-16T11:16:25.291Z",
+    "currency": "GBP",
+    "amount": 4.55,
+    "merchant": "Tesco Express",
+    "categoryId": "work-food-and-drink",
+    "address": "2 The Boulevard, Leeds LS10 1PZ",
+    "monzoCategory": "groceries",
+    "id": "tx_00009PZkzEhUKd0OA393Hl"
+  }, {
+    "dateTime": "2017-10-18T08:26:39.257Z",
+    "currency": "GBP",
+    "amount": 0,
+    "merchant": "Spotify London",
+    "categoryId": "not-set",
+    "address": "Somewhere in London W1F 7TU",
+    "monzoCategory": "entertainment",
+    "id": "tx_00009PderaP1w9gI3nJuV7"
+  }, {
+    "dateTime": "2017-10-18T12:27:29.312Z",
+    "currency": "GBP",
+    "amount": 10,
+    "merchant": "Sky Staff Restaurant",
+    "categoryId": "work-food-and-drink",
+    "address": "Staff Restaurant Online Top Up, Online Top Up EH54 7BW",
+    "monzoCategory": "eating_out",
+    "id": "tx_00009Pe0MB8Q1y4ytEoKgL"
+  }, {
+    "dateTime": "2017-10-19T12:34:53.283Z",
+    "currency": "GBP",
+    "amount": 14,
+    "merchant": "PizzaExpress",
+    "categoryId": "work-food-and-drink",
+    "address": "Clarence Road, Leeds LS10 1LU",
+    "monzoCategory": "eating_out",
+    "id": "tx_00009Pg5Wyi9RxicH2ZVXV"
+  }, {
+    "dateTime": "2017-10-20T15:16:02.053Z",
+    "currency": "GBP",
+    "amount": 4.9,
+    "merchant": "Dock 29",
+    "categoryId": "drinks-out",
+    "address": "The Boulevard, Leeds LS10 1PZ",
+    "monzoCategory": "eating_out",
+    "id": "tx_00009PiOQUgiRvMyDvHcvp"
+  }, {
+    "dateTime": "2017-10-20T20:32:21.996Z",
+    "currency": "GBP",
+    "amount": 38.2,
+    "merchant": "City Varieties Music Hall",
+    "categoryId": "not-set",
+    "address": "Swan Street, Leeds LS1 6LW",
+    "monzoCategory": "entertainment",
+    "id": "tx_00009PiqepppQ4wCa3Ak7t"
   }]
 }
