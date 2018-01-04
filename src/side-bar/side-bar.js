@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Link, withRouter } from 'react-router'
+import { NavLink, withRouter } from 'react-router-dom'
 import { slide as SideMenu } from 'react-burger-menu'
 import MonthSelector from './month-selector'
 import './side-bar-react-burger-menu.scss'
@@ -22,11 +22,11 @@ class SideBar extends Component {
     return (
       <div className='side-bar'>
         <SideMenu noOverlay styles={styles} width={280} isOpen={this.state.open}>
-          <Link to='/dashboard/transactions' className='side-bar__link' activeClassName='active'>
+          <NavLink to='/dashboard/transactions' activeClassName='active'>
             <p className='lead'>
               Transactions
             </p>
-          </Link>
+          </NavLink>
           <MonthSelector />
         </SideMenu>
       </div>

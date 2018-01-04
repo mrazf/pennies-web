@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Link, withRouter } from 'react-router'
+import { Link, withRouter } from 'react-router-dom'
 import firebase from 'firebase'
 
 class Login extends Component {
@@ -12,7 +12,7 @@ class Login extends Component {
   render () {
     return (
       <div className='nav-right nav-menu'>
-        <Link className='nav-item is-tab' style={{cursor: 'pointer'}} onClick={this.onClick}>Login</Link>
+        <Link to='/' className='nav-item is-tab' style={{cursor: 'pointer'}} onClick={this.onClick}>Login</Link>
       </div>
     )
   }

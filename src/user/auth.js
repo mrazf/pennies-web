@@ -1,4 +1,4 @@
-import { Component } from 'react'
+import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import firebase from 'firebase'
 import { userSetup, userLogout } from './redux-actions'
@@ -13,7 +13,8 @@ class Auth extends Component {
   }
 
   render () {
-    return this.props.loggedIn ? this.props.children : null
+    return this.props.loggedIn && this.props.children
+      ? <div className='pennies'>{this.props.children}</div> : null
   }
 }
 
